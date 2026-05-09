@@ -15,3 +15,10 @@ texture = ExtResource("1_xk3fx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138427321]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_t718d")
+
+[node name="AimRayCast" type="RayCast2D" parent="." unique_id=1925198781]
+target_position = Vector2(800, 0)
+
+[node name="TracerLine" type="Line2D" parent="." unique_id=701012611]
+width = 2.0
+default_color = Color(1, 1, 0.47843137, 1)

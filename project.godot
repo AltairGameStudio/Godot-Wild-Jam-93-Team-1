@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1800
 window/size/viewport_height=900
 
+[editor]
+
+movie_writer/movie_file="C:/Users/pedro/OneDrive - Fundacao Getulio Vargas - FGV/Altair/Godot-Wild-Jam-93-Team-1/teste.ogv"
+
 [global_group]
 
 player=""

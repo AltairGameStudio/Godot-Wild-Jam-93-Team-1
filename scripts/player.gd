@@ -4,9 +4,17 @@ const SPEED = 300.0
 
 @onready var aim_raycast = $AimRayCast
 @onready var interact_area = $InteractArea
+@onready var tracer_line = $TracerLine
+
+@export var max_health: int = 5
+var current_health: int = max_health
+var can_shoot: bool = true
+# Tempo entre cada tiro
+@export var shoot_cooldown: float = 0.5
+# Ângulo máximo de erro do tiro em graus
+@export var bullet_spread: float = 8.0
 
 func _physics_process(delta: float) -> void:
-	# Movimentação WASD
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		velocity = direction * SPEED
@@ -14,49 +22,65 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 
 	move_and_slide()
-
-	# Mira e rotação
 	look_at(get_global_mouse_position())
-	
+
 func _unhandled_input(event: InputEvent) -> void:
-	# Gatilho do tiro
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and can_shoot:
 		shoot()
 		
-	# Gatilho da interação
 	if event.is_action_pressed("interact"):
 		try_interact()
 
 func shoot() -> void:
-	# Força o raycast a atualizar a colisão no exato frame do tiro
+	# Trava a arma temporariamente
+	can_shoot = false
+	
+	# Adiciona a imprecisão no tiro
+	var original_rotation = aim_raycast.rotation
+	aim_raycast.rotation += deg_to_rad(randf_range(-bullet_spread, bullet_spread))
+	
 	aim_raycast.force_raycast_update()
 	
+	# Limpa os pontos anteriores e adiciona o ponto de origem
+	tracer_line.clear_points()
+	tracer_line.add_point(aim_raycast.position)
+	
 	if aim_raycast.is_colliding():
-		# Descobre qual objeto o raio atingiu
 		var target = aim_raycast.get_collider()
-		var hit_point = aim_raycast.get_collision_point()
 		
-		# Verifica se o objeto atingido é um criminoso e se ele tem o método para receber dano
+		# Se o tiro bateu em algo, desenha a linha até o ponto de impacto
+		tracer_line.add_point(to_local(aim_raycast.get_collision_point()))
+		
 		if target.has_method("take_damage"):
 			target.take_damage(1)
-			print("Acertou em cheio: ", target.name)
-		else:
-			print("Tiro atingiu cenário/parede em: ", hit_point)
-			
+			print("Acertou: ", target.name)
 	else:
-		print("Tiro no vazio (fora de alcance).")
+		# Se o tiro foi no vazio, desenha a linha até o limite
+		var max_range_point = aim_raycast.position + Vector2(800, 0).rotated(aim_raycast.rotation)
+		tracer_line.add_point(max_range_point)
+	
+	# Faz a linha desaparecer rapidamente
+	get_tree().create_timer(0.05).timeout.connect(func(): tracer_line.clear_points())
+	
+	# Devolve a arma para a posição reta
+	aim_raycast.rotation = original_rotation
+	
+	# Cooldown do tiro
+	await get_tree().create_timer(shoot_cooldown).timeout
+	can_shoot = true
 
 func try_interact() -> void:
-	# Pega todos os corpos físicos que estão sobrepondo a área à frente do jogador
 	var overlapping_bodies = interact_area.get_overlapping_bodies()
-	
 	for body in overlapping_bodies:
-		# Garante que o jogador não tente interagir consigo mesmo
 		if body == self:
 			continue
-			
-		# Verifica se o objeto tem o método de interação
 		if body.has_method("on_interact"):
-			# Interage apenas com o primeiro objeto válido encontrado na área e para
 			body.on_interact()
 			break
+
+func take_damage(amount: int) -> void:
+	current_health -= amount
+	print("Player levou tiro! Vida restante: ", current_health)
+	
+	if current_health <= 0:
+		print("VOCÊ MORREU! Fim de jogo.")

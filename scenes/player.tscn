@@ -31,3 +31,7 @@ shape = SubResource("RectangleShape2D_qhqgy")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1575183668]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="TracerLine" type="Line2D" parent="." unique_id=565546340]
+width = 2.0
+default_color = Color(1, 1, 0.49411765, 1)
