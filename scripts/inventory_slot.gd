@@ -27,6 +27,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
+		
+		if item_id == "":
+			return
+		
 		if not get_viewport().gui_is_drag_successful():
 			# Transforma o clique na UI na coordenada do cenário
 			var drop_position = get_viewport().get_canvas_transform().affine_inverse() * get_viewport().get_mouse_position()

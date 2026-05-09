@@ -38,3 +38,7 @@ position = Vector2(-3203, -5883)
 
 [node name="CollectableItem" parent="." unique_id=257072854 instance=ExtResource("6_i7141")]
 position = Vector2(-4777, -4617)
+
+[node name="CollectableItem2" parent="." unique_id=915468564 instance=ExtResource("6_i7141")]
+position = Vector2(-4777, -4617)
+item_id = "pliers2"

@@ -18,12 +18,13 @@ func _physics_process(delta: float) -> void:
 	# Mira e rotação
 	look_at(get_global_mouse_position())
 	
+func _unhandled_input(event: InputEvent) -> void:
 	# Gatilho do tiro
-	if Input.is_action_just_pressed("shoot"):
+	if event.is_action_pressed("shoot"):
 		shoot()
 		
 	# Gatilho da interação
-	if Input.is_action_just_pressed("interact"):
+	if event.is_action_pressed("interact"):
 		try_interact()
 
 func shoot() -> void:
