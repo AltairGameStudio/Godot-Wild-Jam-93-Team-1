@@ -37,8 +37,12 @@ tile_set = SubResource("TileSet_71j4m")
 position = Vector2(-3203, -5883)
 
 [node name="CollectableItem" parent="." unique_id=257072854 instance=ExtResource("6_i7141")]
-position = Vector2(-4777, -4617)
+position = Vector2(-4266, -5901)
 
 [node name="CollectableItem2" parent="." unique_id=915468564 instance=ExtResource("6_i7141")]
-position = Vector2(-4777, -4617)
+position = Vector2(-4410, -5114)
 item_id = "pliers2"
+
+[node name="CollectableItem3" parent="." unique_id=1146840372 instance=ExtResource("6_i7141")]
+position = Vector2(-4923, -4501)
+item_id = "pliers3"

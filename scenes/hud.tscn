@@ -76,3 +76,129 @@ mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot7" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1878437833]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot8" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1579458111]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot9" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1116091154]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot10" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=2033874821]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot11" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=61503087]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot12" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=2119263953]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot13" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=385401487]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot14" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=223704094]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot15" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1272669009]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot16" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=516504599]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot17" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=583693861]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot18" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=709666138]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot19" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1269273904]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot20" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1568784360]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")

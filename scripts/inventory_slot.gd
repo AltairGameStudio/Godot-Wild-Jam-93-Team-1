@@ -1,6 +1,11 @@
 extends TextureRect
 
-@export var item_id: String = ""
+@export var item_id: String = "":
+	set(value):
+		item_id = value
+		# Atualiza o texto do hover
+		tooltip_text = value if value != "" else ""
+
 var is_dragging: bool = false
 
 func _ready() -> void:
@@ -64,5 +69,8 @@ func _notification(what: int) -> void:
 						item_id = ""
 						# Limpa a imagem
 						texture = null
-						modulate = Color(0, 0, 0, 1) 
+						modulate = Color(0, 0, 0, 1)
+						
+						# Avisa o inventário para puxar os itens de baixo para cima
+						get_parent().reorganize()
 					break
