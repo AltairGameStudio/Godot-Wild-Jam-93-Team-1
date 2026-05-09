@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 @onready var aim_raycast = $AimRayCast
+@onready var interact_area = $InteractArea
 
 func _physics_process(delta: float) -> void:
 	# Movimentação WASD
@@ -20,6 +21,10 @@ func _physics_process(delta: float) -> void:
 	# Gatilho do tiro
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+		
+	# Gatilho da interação
+	if Input.is_action_just_pressed("interact"):
+		try_interact()
 
 func shoot() -> void:
 	# Força o raycast a atualizar a colisão no exato frame do tiro
@@ -39,3 +44,18 @@ func shoot() -> void:
 			
 	else:
 		print("Tiro no vazio (fora de alcance).")
+
+func try_interact() -> void:
+	# Pega todos os corpos físicos que estão sobrepondo a área à frente do jogador
+	var overlapping_bodies = interact_area.get_overlapping_bodies()
+	
+	for body in overlapping_bodies:
+		# Garante que o jogador não tente interagir consigo mesmo
+		if body == self:
+			continue
+			
+		# Verifica se o objeto tem o método de interação
+		if body.has_method("on_interact"):
+			# Interage apenas com o primeiro objeto válido encontrado na área e para
+			body.on_interact()
+			break

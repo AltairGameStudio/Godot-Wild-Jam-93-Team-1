@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(127, 130)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(133.75, 131)
+
 [node name="Player" type="CharacterBody2D" unique_id=1287792069]
 script = ExtResource("1_g2els")
 
@@ -18,3 +21,9 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="AimRayCast" type="RayCast2D" parent="." unique_id=776058415]
 target_position = Vector2(800, 0)
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1513841751]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=744042015]
+position = Vector2(130.125, -0.5)
+shape = SubResource("RectangleShape2D_qhqgy")

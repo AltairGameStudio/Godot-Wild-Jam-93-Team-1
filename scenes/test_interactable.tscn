@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cf5v600qr0lhc"]
+
+[ext_resource type="Script" uid="uid://dhfbx40kjvgpu" path="res://scripts/test_interactable.gd" id="1_qi0sb"]
+[ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_vyifp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi0sb"]
+size = Vector2(128, 128)
+
+[node name="TestInteractable" type="StaticBody2D" unique_id=1273332422]
+script = ExtResource("1_qi0sb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61996583]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_vyifp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879329387]
+shape = SubResource("RectangleShape2D_qi0sb")
