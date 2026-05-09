@@ -1,6 +1,7 @@
 extends TextureRect
 
 @export var item_id: String = ""
+var is_dragging: bool = false
 
 func _ready() -> void:
 	if item_id == "":
@@ -10,6 +11,8 @@ func _ready() -> void:
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if item_id == "":
 		return null
+		
+	is_dragging = true
 		
 	var preview = TextureRect.new()
 	preview.texture = self.texture
@@ -27,6 +30,11 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
+		
+		if not is_dragging:
+			return
+			
+		is_dragging = false
 		
 		if item_id == "":
 			return

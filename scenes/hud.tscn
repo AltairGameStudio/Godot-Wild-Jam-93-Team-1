@@ -27,46 +27,52 @@ script = ExtResource("1_5ysmq")
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
 
-[node name="InventorySlot2" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=962141557]
+[node name="InventorySlot2" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=966062005]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
 
-[node name="InventorySlot3" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1549056774]
+[node name="InventorySlot3" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1919937836]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
 
-[node name="InventorySlot4" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=464589444]
+[node name="InventorySlot4" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=219745171]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
 
-[node name="InventorySlot5" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=852572484]
+[node name="InventorySlot5" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=683234242]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
 
-[node name="InventorySlot6" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1548692627]
+[node name="InventorySlot6" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1495792747]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
