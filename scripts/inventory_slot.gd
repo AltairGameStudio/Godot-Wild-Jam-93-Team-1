@@ -23,7 +23,8 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
 		if not get_viewport().gui_is_drag_successful():
-			var drop_position = get_global_mouse_position()
+			# Transforma o clique na UI na coordenada do cenário
+			var drop_position = get_viewport().get_canvas_transform().affine_inverse() * get_viewport().get_mouse_position()
 			
 			var space_state = get_tree().root.get_world_2d().direct_space_state
 			

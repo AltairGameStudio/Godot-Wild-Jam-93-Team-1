@@ -8,7 +8,6 @@ func on_interact() -> void:
 	print("Uma tela de arame resistente bloqueia o caminho. Preciso de algo para cortá-la.")
 
 func on_item_used(used_item_id: String) -> bool:
-	print(used_item_id)
 	if used_item_id == required_item:
 		print("Você usou o(a) ", used_item_id, " e abriu o caminho!")
 		# Destrói a cerca de arame
