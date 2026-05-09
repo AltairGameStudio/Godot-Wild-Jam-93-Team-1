@@ -1,6 +1,6 @@
 extends TextureRect
 
-@export var item_id: String = "pe_de_cabra" 
+@export var item_id: String = "pliers" 
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if item_id == "":
@@ -24,4 +24,27 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
 		if not get_viewport().gui_is_drag_successful():
 			var drop_position = get_global_mouse_position()
-			print("Você tentou usar o item '", item_id, "' na posição do mapa: ", drop_position)
+			
+			var space_state = get_tree().root.get_world_2d().direct_space_state
+			
+			# Configura a busca no exato pixel onde o mouse soltou o item
+			var query = PhysicsPointQueryParameters2D.new()
+			query.position = drop_position
+			
+			# Pega tudo que colidiu com aquele ponto
+			var results = space_state.intersect_point(query)
+			
+			# Verifica se acertou um obstáculo válido
+			for result in results:
+				var object = result.collider
+				
+				if object.has_method("on_item_used"):
+					var success = object.on_item_used(item_id)
+					
+					# Se o obstáculo retornar true, consome o item do inventário
+					if success:
+						item_id = ""
+						# Limpa a imagem
+						texture = null
+						modulate = Color(0, 0, 0, 1) 
+					break
