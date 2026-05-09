@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nlsesjyanxap" path="res://scenes/hud.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cf5v600qr0lhc" path="res://scenes/test_interactable.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bpdjs6e5pu01t" path="res://scenes/collectable_item.tscn" id="6_i7141"]
+[ext_resource type="PackedScene" uid="uid://cehhy8a3xl28e" path="res://scenes/criminal_target.tscn" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("3_4wyf3")
@@ -46,3 +47,12 @@ item_id = "pliers2"
 [node name="CollectableItem3" parent="." unique_id=1146840372 instance=ExtResource("6_i7141")]
 position = Vector2(-4923, -4501)
 item_id = "pliers3"
+
+[node name="CriminalTarget" parent="." unique_id=1990985216 instance=ExtResource("7_i7141")]
+position = Vector2(1504, -3480)
+
+[node name="CriminalTarget2" parent="." unique_id=815589432 instance=ExtResource("7_i7141")]
+position = Vector2(535, -5639)
+
+[node name="CriminalTarget3" parent="." unique_id=916959591 instance=ExtResource("7_i7141")]
+position = Vector2(-3945, -4436)
