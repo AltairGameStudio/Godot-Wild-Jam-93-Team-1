@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://2gsw8dx3io4q"]
+
+[ext_resource type="Script" uid="uid://c51o3o2ev2vj4" path="res://scripts/criminal_target.gd" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cyshgyvntusxc" path="res://scenes/player.tscn" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://cehhy8a3xl28e" path="res://scenes/criminal_target.tscn" id="3_71j4m"]
+
+[node name="World" type="Node2D" unique_id=809886004]
+script = ExtResource("1_4wyf3")
+
+[node name="Player" parent="." unique_id=1287792069 instance=ExtResource("2_k0juu")]
+position = Vector2(141, 112)
+
+[node name="CriminalTarget" parent="." unique_id=1990985216 instance=ExtResource("3_71j4m")]
+position = Vector2(411, 535)
+
+[node name="CriminalTarget2" parent="." unique_id=1325246513 instance=ExtResource("3_71j4m")]
+position = Vector2(933, 496)
+
+[node name="CriminalTarget3" parent="." unique_id=465071711 instance=ExtResource("3_71j4m")]
+position = Vector2(996, 125)

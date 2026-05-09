@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cehhy8a3xl28e"]
+
+[ext_resource type="Script" uid="uid://c51o3o2ev2vj4" path="res://scripts/criminal_target.gd" id="1_t718d"]
+[ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_xk3fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t718d"]
+size = Vector2(128, 129)
+
+[node name="CriminalTarget" type="CharacterBody2D" unique_id=1990985216]
+script = ExtResource("1_t718d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459075400]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_xk3fx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138427321]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_t718d")
