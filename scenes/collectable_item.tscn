@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpdjs6e5pu01t"]
+
+[ext_resource type="Script" uid="uid://c1e7q568itphu" path="res://scripts/collectable_item.gd" id="1_7u7jm"]
+[ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="2_yg184"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8v6b"]
+size = Vector2(64, 64)
+
+[node name="CollectableItem" type="StaticBody2D" unique_id=257072854]
+script = ExtResource("1_7u7jm")
+item_icon = ExtResource("2_yg184")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691933557]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yg184")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=679823771]
+shape = SubResource("RectangleShape2D_t8v6b")

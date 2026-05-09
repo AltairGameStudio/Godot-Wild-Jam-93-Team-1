@@ -1,6 +1,11 @@
 extends TextureRect
 
-@export var item_id: String = "pliers" 
+@export var item_id: String = ""
+
+func _ready() -> void:
+	if item_id == "":
+		texture = null
+		modulate = Color(0, 0, 0, 1)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if item_id == "":

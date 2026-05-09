@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://nlsesjyanxap"]
 
+[ext_resource type="Script" uid="uid://2e7nac8cloif" path="res://scripts/inventory_manager.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_oo0fn"]
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
 
@@ -16,12 +17,53 @@ offset_bottom = 325.0
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InventoryScroll" unique_id=1159907153]
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryScroll" unique_id=1159907153 groups=["inventory"]]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
+script = ExtResource("1_5ysmq")
 
 [node name="InventorySlot" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=201107977]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot2" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=962141557]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot3" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1549056774]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot4" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=464589444]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot5" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=852572484]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+script = ExtResource("2_5ysmq")
+
+[node name="InventorySlot6" type="TextureRect" parent="InventoryScroll/VBoxContainer" unique_id=1548692627]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
