@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="WGJ#93 Time 1"
-run/main_scene="uid://cyshgyvntusxc"
+run/main_scene="uid://2gsw8dx3io4q"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1800
+window/size/viewport_height=900
 
 [input]
 
