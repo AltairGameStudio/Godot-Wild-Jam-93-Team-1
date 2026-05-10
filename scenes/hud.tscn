@@ -3,9 +3,18 @@
 [ext_resource type="Script" uid="uid://2e7nac8cloif" path="res://scripts/inventory_manager.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_oo0fn"]
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
-[ext_resource type="Script" uid="uid://bd8lnpyuh3kdf" path="res://scripts/time_label.gd" id="4_6fi6k"]
+[ext_resource type="Script" path="res://scripts/time_label.gd" id="4_6fi6k"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1311239376]
+
+[node name="HurtOverlay" type="ColorRect" parent="." unique_id=1528188273]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1801.0
+offset_bottom = 901.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(1, 0, 0, 0)
 
 [node name="InventoryScroll" type="ScrollContainer" parent="." unique_id=811543481]
 anchors_preset = 4

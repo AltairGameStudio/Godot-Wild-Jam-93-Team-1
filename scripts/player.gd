@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 900.0
 
 @onready var aim_raycast = $AimRayCast
 @onready var interact_area = $InteractArea
@@ -81,6 +81,10 @@ func try_interact() -> void:
 func take_damage(amount: int) -> void:
 	current_health -= amount
 	print("Player levou tiro! Vida restante: ", current_health)
+	var hurt_overlay = $/root/World/HUD/HurtOverlay
+	var tween = get_tree().create_tween()
+	tween.tween_property(hurt_overlay, "color", Color(1, 0, 0, 0.1), 0.1)
+	tween.tween_property(hurt_overlay, "color", Color(1, 0, 0, 0), 0.2)
 	
 	if current_health <= 0:
 		print("VOCÊ MORREU! Fim de jogo.")
