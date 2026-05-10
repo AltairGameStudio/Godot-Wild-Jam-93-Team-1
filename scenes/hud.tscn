@@ -224,3 +224,16 @@ offset_bottom = 65.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 script = ExtResource("4_6fi6k")
+
+[node name="PointsLabel" type="Label" parent="." unique_id=1912080565]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 65.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2

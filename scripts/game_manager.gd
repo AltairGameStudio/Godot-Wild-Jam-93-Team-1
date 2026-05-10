@@ -3,6 +3,7 @@ extends Node
 # Tempo até o jogo acabar
 var total_time: float = 120.0
 var time_remaining: float
+var points: int = 0
 var is_game_over: bool = false
 
 func _ready() -> void:
@@ -24,3 +25,7 @@ func end_game(reason: String) -> void:
 	print("GAME OVER: ", reason)
 	
 	get_tree().paused = true
+
+func update_points(amount: int) -> void:
+	points += amount
+	$/root/World/HUD/PointsLabel.text = str(points)

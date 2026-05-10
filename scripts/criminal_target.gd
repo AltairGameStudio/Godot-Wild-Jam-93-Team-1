@@ -15,6 +15,7 @@ var current_state: State = State.IDLE
 var player: Node2D
 var will_betray: bool = false
 var betray_distance: float = 0.0
+var points_awarded: int = 100
 
 # Variáveis para movimento
 var current_strafe_angle: float = 0.0
@@ -150,10 +151,12 @@ func take_damage(amount: int) -> void:
 	print("Criminoso levou tiro! Vida: ", health)
 	if current_state == State.SURRENDERING:
 		enter_hostile_state()
+		points_awarded = 50  # Menos pontos por atacar um rendido
 	if health <= 0:
 		die()
 
 func die() -> void:
+	GameManager.update_points(points_awarded)
 	queue_free()
 
 func on_interact() -> void:
@@ -167,6 +170,7 @@ func on_interact() -> void:
 
 func arrest() -> void:
 	print("Criminoso capturado vivo")
+	GameManager.update_points(points_awarded)
 	
 	# Por enquanto, ele apenas desaparece da cena
 	queue_free()
