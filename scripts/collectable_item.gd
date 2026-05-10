@@ -14,7 +14,7 @@ func on_interact() -> void:
 		var success = inventory.add_item(item_id, item_icon)
 		
 		if success:
-			print("Você pegou: ", item_id)
+			$/root/World/HUD/DialogBox.display_text("Você pegou: " + item_id)
 			# Destrói o item do chão
 			queue_free()
 	else:

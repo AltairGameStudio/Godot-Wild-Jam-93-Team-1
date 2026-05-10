@@ -164,12 +164,12 @@ func on_interact() -> void:
 	if current_state == State.SURRENDERING:
 		arrest()
 	elif current_state == State.HOSTILE:
-		print("Impossível prender agora. O criminoso está reagindo.")
+		$/root/World/HUD/DialogBox.display_text("Impossível prender agora. O criminoso está reagindo.")
 	else:
-		print("O suspeito ainda não foi confrontado.")
+		$/root/World/HUD/DialogBox.display_text("O suspeito ainda não foi confrontado.")
 
 func arrest() -> void:
-	print("Criminoso capturado vivo")
+	$/root/World/HUD/DialogBox.display_text("Criminoso capturado vivo")
 	GameManager.update_points(points_awarded)
 	
 	# Por enquanto, ele apenas desaparece da cena
