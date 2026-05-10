@@ -27,7 +27,7 @@ var shoot_timer: Timer
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-	betray_distance = randf() * 0.8 * detection_radius
+	betray_distance = randf_range(150.0, detection_radius * 0.8)
 	
 	# Ficar mudando de direção
 	movement_timer = Timer.new()
