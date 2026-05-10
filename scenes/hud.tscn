@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://2e7nac8cloif" path="res://scripts/inventory_manager.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_oo0fn"]
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
+[ext_resource type="Script" uid="uid://bd8lnpyuh3kdf" path="res://scripts/time_label.gd" id="4_6fi6k"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1311239376]
 
@@ -202,3 +203,15 @@ mouse_filter = 0
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 script = ExtResource("2_5ysmq")
+
+[node name="TimeLabel" type="Label" parent="." unique_id=459827437]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+script = ExtResource("4_6fi6k")
