@@ -57,20 +57,23 @@ func _notification(what: int) -> void:
 			# Pega tudo que colidiu com aquele ponto
 			var results = space_state.intersect_point(query)
 			
-			# Verifica se acertou um obstáculo válido
+			# Pega a referência do jogador
+			var player = get_tree().get_first_node_in_group("player")
+			
 			for result in results:
 				var object = result.collider
 				
 				if object.has_method("on_item_used"):
-					var success = object.on_item_used(item_id)
 					
-					# Se o obstáculo retornar true, consome o item do inventário
+					# Verifica se o objeto está dentro da InteractArea do jogador
+					if player and not object in player.interact_area.get_overlapping_bodies():
+						print("Chegue mais perto e olhe para o obstáculo para usar o item.")
+						break
+						
+					var success = object.on_item_used(item_id)
 					if success:
 						item_id = ""
-						# Limpa a imagem
 						texture = null
-						modulate = Color(0, 0, 0, 1)
-						
-						# Avisa o inventário para puxar os itens de baixo para cima
+						modulate = Color(0, 0, 0, 1) 
 						get_parent().reorganize()
 					break
