@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://2e7nac8cloif" path="res://scripts/inventory_manager.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_oo0fn"]
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
-[ext_resource type="Script" path="res://scripts/time_label.gd" id="4_6fi6k"]
-[ext_resource type="Script" uid="uid://j86o5lumxsmj" path="res://scripts/dialog_box.gd" id="5_uo2fv"]
+[ext_resource type="Script" uid="uid://bd8lnpyuh3kdf" path="res://scripts/time_label.gd" id="4_6fi6k"]
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="5_uo2fv"]
+[ext_resource type="Script" uid="uid://swn71rn1hu8i" path="res://scripts/health_bar.gd" id="6_047uy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
+bg_color = Color(0.69411767, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" unique_id=1311239376]
+layer = 10
 
 [node name="HurtOverlay" type="ColorRect" parent="." unique_id=1528188273]
 offset_left = 1.0
@@ -241,7 +246,7 @@ horizontal_alignment = 2
 
 [node name="DialogBox" type="ColorRect" parent="." unique_id=844776305]
 modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -268,3 +273,12 @@ theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=149502484]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 270.0
+offset_bottom = 50.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5pdws")
+show_percentage = false
+script = ExtResource("6_047uy")

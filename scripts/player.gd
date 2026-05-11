@@ -16,7 +16,7 @@ var can_shoot: bool = true
 @export var bullet_spread: float = 8.0
 
 # Estado da arma
-var is_weapon_equipped: bool = true
+var is_weapon_equipped: bool = false
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -103,3 +103,4 @@ func take_damage(amount: int) -> void:
 	
 	if current_health <= 0:
 		print("VOCÊ MORREU! Fim de jogo.")
+		get_tree().paused = true
