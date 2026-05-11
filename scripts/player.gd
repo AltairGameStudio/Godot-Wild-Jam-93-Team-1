@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 900.0
+const SPEED_EQUIPPED = 150.0
+const SPEED_UNEQUIPPED = 300.0
 
 @onready var aim_raycast = $AimRayCast
 @onready var interact_area = $InteractArea
@@ -14,18 +15,32 @@ var can_shoot: bool = true
 # Ângulo máximo de erro do tiro em graus
 @export var bullet_spread: float = 8.0
 
+# Estado da arma
+var is_weapon_equipped: bool = true
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	# Define a velocidade baseada na arma
+	var current_speed = SPEED_EQUIPPED if is_weapon_equipped else SPEED_UNEQUIPPED
+	
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * current_speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, current_speed)
 
 	move_and_slide()
 	look_at(get_global_mouse_position())
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot") and can_shoot:
+	if event.is_action_pressed("equip"):
+		is_weapon_equipped = !is_weapon_equipped
+		if is_weapon_equipped:
+			print("Arma empunhada.")
+		else:
+			print("Arma guardada.")
+	
+	if event.is_action_pressed("shoot") and can_shoot and is_weapon_equipped:
 		shoot()
 		
 	if event.is_action_pressed("interact"):

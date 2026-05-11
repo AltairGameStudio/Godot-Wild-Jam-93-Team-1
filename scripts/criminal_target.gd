@@ -3,6 +3,9 @@ extends CharacterBody2D
 enum State { IDLE, SURRENDERING, HOSTILE }
 var current_state: State = State.IDLE
 
+enum KillType { LEGITIMATE, ILLEGITIMATE }
+var kill_classification: KillType = KillType.LEGITIMATE
+
 @export var detection_radius: float = 800.0
 @export var surrender_chance: float = 0.6
 @export var betray_chance: float = 0.4
@@ -15,7 +18,10 @@ var current_state: State = State.IDLE
 var player: Node2D
 var will_betray: bool = false
 var betray_distance: float = 0.0
-var points_awarded: int = 100
+
+var capture_points: int = 100
+var legitimate_kill_points: int = 75
+var illegitimate_kill_points: int = 50
 
 # Variáveis para movimento
 var current_strafe_angle: float = 0.0
@@ -63,7 +69,13 @@ func _physics_process(delta: float) -> void:
 			velocity = organic_dir * 35.0
 			move_and_slide()
 			
-			if will_betray and distance <= betray_distance:
+			if not player.is_weapon_equipped:
+				# Culpa do player
+				kill_classification = KillType.ILLEGITIMATE
+				enter_hostile_state()
+			elif will_betray and distance <= betray_distance:
+				# Legítima defesa
+				kill_classification = KillType.LEGITIMATE
 				enter_hostile_state()
 			
 		State.HOSTILE:
@@ -77,9 +89,14 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func decide_initial_reaction() -> void:
-	if randf() <= surrender_chance:
+	if not player.is_weapon_equipped:
+		# Culpa do player por andar desarmado
+		kill_classification = KillType.ILLEGITIMATE
+		enter_hostile_state()
+	elif randf() <= surrender_chance:
 		enter_surrender_state()
 	else:
+		kill_classification = KillType.LEGITIMATE
 		enter_hostile_state()
 
 func enter_surrender_state() -> void:
@@ -149,14 +166,21 @@ func _on_movement_timer_timeout() -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	print("Criminoso levou tiro! Vida: ", health)
+	
 	if current_state == State.SURRENDERING:
+		print("Você atirou num suspeito rendido!")
+		kill_classification = KillType.ILLEGITIMATE
 		enter_hostile_state()
-		points_awarded = 50  # Menos pontos por atacar um rendido
+	
 	if health <= 0:
 		die()
 
 func die() -> void:
-	GameManager.update_points(points_awarded)
+	if kill_classification == KillType.LEGITIMATE:
+		GameManager.update_points(legitimate_kill_points)
+	else:
+		GameManager.update_points(illegitimate_kill_points)
+		
 	queue_free()
 
 func on_interact() -> void:
@@ -170,7 +194,7 @@ func on_interact() -> void:
 
 func arrest() -> void:
 	$/root/World/HUD/DialogBox.display_text("Criminoso capturado vivo")
-	GameManager.update_points(points_awarded)
+	GameManager.update_points(capture_points)
 	
 	# Por enquanto, ele apenas desaparece da cena
 	queue_free()
