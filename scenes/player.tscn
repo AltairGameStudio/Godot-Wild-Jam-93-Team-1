@@ -35,3 +35,11 @@ position_smoothing_enabled = true
 [node name="TracerLine" type="Line2D" parent="." unique_id=565546340]
 width = 2.0
 default_color = Color(1, 1, 0.49411765, 1)
+
+[node name="HealBar" type="ProgressBar" parent="." unique_id=1614195437]
+visible = false
+offset_left = -64.0
+offset_top = -78.0
+offset_right = 64.0
+offset_bottom = -71.0
+show_percentage = false

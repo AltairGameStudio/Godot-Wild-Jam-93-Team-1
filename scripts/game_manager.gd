@@ -5,6 +5,7 @@ var total_time: float = 120.0
 var time_remaining: float
 var points: int = 0
 var is_game_over: bool = false
+var medkit_count: int = 0
 
 func _ready() -> void:
 	time_remaining = total_time
@@ -29,3 +30,12 @@ func end_game(reason: String) -> void:
 func update_points(amount: int) -> void:
 	points += amount
 	$/root/World/HUD/PointsLabel.text = str(points)
+
+func add_medkit(amount: int) -> void:
+	medkit_count += amount
+
+func use_medkit() -> bool:
+	if medkit_count > 0:
+		medkit_count -= 1
+		return true
+	return false

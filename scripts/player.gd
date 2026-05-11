@@ -6,9 +6,11 @@ const SPEED_UNEQUIPPED = 300.0
 @onready var aim_raycast = $AimRayCast
 @onready var interact_area = $InteractArea
 @onready var tracer_line = $TracerLine
+@onready var heal_bar = $HealBar
 
 @export var max_health: int = 5
-var current_health: int = max_health
+# var current_health: int = max_health
+var current_health: int = 2
 var can_shoot: bool = true
 # Tempo entre cada tiro
 @export var shoot_cooldown: float = 0.5
@@ -18,7 +20,20 @@ var can_shoot: bool = true
 # Estado da arma
 var is_weapon_equipped: bool = false
 
+# Tempo em segundos para curar
+@export var heal_time_required: float = 2.0
+var current_heal_time: float = 0.0
+var is_healing: bool = false
+
 func _physics_process(delta: float) -> void:
+	if is_healing:
+		# Imobiliza o player
+		velocity = Vector2.ZERO
+		move_and_slide()
+		process_healing(delta)
+		look_at(get_global_mouse_position())
+		return
+
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	# Define a velocidade baseada na arma
@@ -39,12 +54,20 @@ func _unhandled_input(event: InputEvent) -> void:
 			print("Arma empunhada.")
 		else:
 			print("Arma guardada.")
-	
+
 	if event.is_action_pressed("shoot") and can_shoot and is_weapon_equipped:
 		shoot()
 		
 	if event.is_action_pressed("interact"):
 		try_interact()
+		
+	# Início da cura
+	if event.is_action_pressed("heal") and GameManager.medkit_count > 0 and current_health < max_health:
+		start_healing()
+	
+	# Interrupção da cura
+	if event.is_action_released("heal"):
+		stop_healing()
 
 func shoot() -> void:
 	# Trava a arma temporariamente
@@ -104,3 +127,26 @@ func take_damage(amount: int) -> void:
 	if current_health <= 0:
 		print("VOCÊ MORREU! Fim de jogo.")
 		get_tree().paused = true
+
+func start_healing() -> void:
+	is_healing = true
+	current_heal_time = 0.0
+	heal_bar.visible = true
+	heal_bar.max_value = heal_time_required
+
+func stop_healing() -> void:
+	is_healing = false
+	current_heal_time = 0.0
+	heal_bar.visible = false
+
+func process_healing(delta: float) -> void:
+	current_heal_time += delta
+	heal_bar.value = current_heal_time
+	
+	if current_heal_time >= heal_time_required:
+		complete_healing()
+
+func complete_healing() -> void:
+	if GameManager.use_medkit():
+		current_health = min(current_health + 2, max_health)
+	stop_healing()
