@@ -49,11 +49,13 @@ is_medkit = true
 position = Vector2(-4923, -4501)
 is_medkit = true
 
-[node name="CriminalTarget" parent="." unique_id=1990985216 instance=ExtResource("7_i7141")]
+[node name="Criminals" type="Node" parent="." unique_id=670724956]
+
+[node name="CriminalTarget" parent="Criminals" unique_id=1990985216 instance=ExtResource("7_i7141")]
 position = Vector2(1504, -3480)
 
-[node name="CriminalTarget2" parent="." unique_id=815589432 instance=ExtResource("7_i7141")]
+[node name="CriminalTarget2" parent="Criminals" unique_id=815589432 instance=ExtResource("7_i7141")]
 position = Vector2(535, -5639)
 
-[node name="CriminalTarget3" parent="." unique_id=916959591 instance=ExtResource("7_i7141")]
+[node name="CriminalTarget3" parent="Criminals" unique_id=916959591 instance=ExtResource("7_i7141")]
 position = Vector2(-3945, -4436)

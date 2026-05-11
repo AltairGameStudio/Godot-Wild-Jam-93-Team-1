@@ -181,7 +181,7 @@ func die() -> void:
 	else:
 		GameManager.update_points(illegitimate_kill_points)
 		
-	queue_free()
+	remove_from_scene()
 
 func on_interact() -> void:
 	# A prisão só é possível se o criminoso estiver rendido
@@ -197,4 +197,9 @@ func arrest() -> void:
 	GameManager.update_points(capture_points)
 	
 	# Por enquanto, ele apenas desaparece da cena
+	remove_from_scene()
+
+func remove_from_scene() -> void:
 	queue_free()
+	if get_parent().get_child_count() <= 1:
+		GameManager.win_game()

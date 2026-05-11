@@ -4,7 +4,7 @@ extends Node
 var total_time: float = 120.0
 var time_remaining: float
 var points: int = 0
-var is_game_over: bool = false
+var is_game_over: bool = true
 var medkit_count: int = 0
 
 func _ready() -> void:
@@ -32,6 +32,14 @@ func end_game(reason: String) -> void:
 	$/root/World/HUD/GameOverScreen/ReasonLabel.text = reason
 	$/root/World/HUD/GameOverScreen/ScoreLabel.text = "Pontos: " + str(points)
 	$/root/World/HUD/GameOverScreen.fade_in()
+	
+	get_tree().paused = true
+
+func win_game() -> void:
+	points += int(time_remaining) * 5  # Bônus por tempo restante
+	is_game_over = true
+	$/root/World/HUD/VictoryScreen/ScoreLabel.text = "Pontos: " + str(points)
+	$/root/World/HUD/VictoryScreen.fade_in()
 	
 	get_tree().paused = true
 
