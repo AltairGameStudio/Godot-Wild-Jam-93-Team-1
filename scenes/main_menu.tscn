@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bo2yv1glosdgm"]
+
+[ext_resource type="Script" uid="uid://b3bp4t6fjox23" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control" unique_id=154347934]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="GameTitle" type="Label" parent="." unique_id=151654199]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -174.0
+offset_top = -44.0
+offset_right = 174.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Título Incrível"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1060069072]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=828509133]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jogar"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=761586223]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Configurações"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=77075015]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Créditos"
+
+[node name="SettingsScreen" parent="." unique_id=758672754 instance=ExtResource("2_ekxnf")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsScreen" type="ColorRect" parent="." unique_id=40780251]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[node name="CreditsLabel" type="Label" parent="CreditsScreen" unique_id=609988665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Programação: Pedro & Pedro
+Sound Design: Nivadra"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsBackButton" type="Button" parent="CreditsScreen" unique_id=1326464007]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.5
+offset_top = -78.0
+offset_right = 50.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CreditsScreen/CreditsBackButton" to="." method="_on_credits_back_button_pressed"]

@@ -21,9 +21,17 @@ func _process(delta: float) -> void:
 		time_remaining = 0.0
 		end_game("O seu tempo acabou.")
 
+func start_game() -> void:
+	time_remaining = total_time
+	points = 0
+	is_game_over = false
+	get_tree().paused = false
+
 func end_game(reason: String) -> void:
 	is_game_over = true
-	print("GAME OVER: ", reason)
+	$/root/World/HUD/GameOverScreen/ReasonLabel.text = reason
+	$/root/World/HUD/GameOverScreen/ScoreLabel.text = "Pontos: " + str(points)
+	$/root/World/HUD/GameOverScreen.fade_in()
 	
 	get_tree().paused = true
 

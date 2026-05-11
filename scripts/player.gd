@@ -71,6 +71,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Interrupção da cura
 	if event.is_action_released("heal"):
 		stop_healing()
+	
+	if event.is_action_pressed("pause"):
+		$/root/World/HUD/PauseMenu.pause()
 
 func shoot() -> void:
 	# Trava a arma temporariamente
@@ -129,7 +132,7 @@ func take_damage(amount: int) -> void:
 	
 	if current_health <= 0:
 		print("VOCÊ MORREU! Fim de jogo.")
-		get_tree().paused = true
+		GameManager.end_game("Você foi morto.")
 
 func start_healing() -> void:
 	is_healing = true

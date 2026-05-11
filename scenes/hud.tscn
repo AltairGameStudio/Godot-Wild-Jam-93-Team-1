@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://scripts/dialog_box.gd" id="5_uo2fv"]
 [ext_resource type="Script" uid="uid://swn71rn1hu8i" path="res://scripts/health_bar.gd" id="6_047uy"]
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
+[ext_resource type="PackedScene" uid="uid://buuujl3ct1quy" path="res://scenes/game_over_screen.tscn" id="6_5pdws"]
+[ext_resource type="PackedScene" uid="uid://bimjl21vj5gsa" path="res://scenes/victory_screen.tscn" id="7_hd3ao"]
+[ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
 bg_color = Color(0.69411767, 0, 0, 1)
@@ -298,3 +301,15 @@ offset_right = 57.0
 offset_bottom = 60.0
 horizontal_alignment = 2
 script = ExtResource("7_5pdws")
+
+[node name="GameOverScreen" parent="." unique_id=154347934 instance=ExtResource("6_5pdws")]
+process_mode = 2
+visible = false
+
+[node name="VictoryScreen" parent="." unique_id=231171996 instance=ExtResource("7_hd3ao")]
+process_mode = 2
+visible = false
+
+[node name="PauseMenu" parent="." unique_id=956680066 instance=ExtResource("8_hd3ao")]
+process_mode = 2
+visible = false
