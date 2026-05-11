@@ -47,7 +47,7 @@ is_medkit = true
 
 [node name="CollectableItem3" parent="." unique_id=1146840372 instance=ExtResource("6_i7141")]
 position = Vector2(-4923, -4501)
-item_id = "pliers3"
+is_medkit = true
 
 [node name="CriminalTarget" parent="." unique_id=1990985216 instance=ExtResource("7_i7141")]
 position = Vector2(1504, -3480)

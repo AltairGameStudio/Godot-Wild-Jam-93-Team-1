@@ -27,6 +27,9 @@ var is_healing: bool = false
 
 func _physics_process(delta: float) -> void:
 	if is_healing:
+		# Mantém a barra fixa acima da cabeça do player
+		heal_bar.global_position = global_position + Vector2(-heal_bar.size.x / 2, -80)
+		heal_bar.rotation = 0
 		# Imobiliza o player
 		velocity = Vector2.ZERO
 		move_and_slide()
