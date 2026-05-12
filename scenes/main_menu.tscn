@@ -26,7 +26,7 @@ offset_right = 174.0
 offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
-text = "Título Incrível"
+text = "Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -49,17 +49,17 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=828509133]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Jogar"
+text = "Play"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=761586223]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Configurações"
+text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=77075015]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Créditos"
+text = "Credits"
 
 [node name="SettingsScreen" parent="." unique_id=758672754 instance=ExtResource("2_ekxnf")]
 visible = false
@@ -89,7 +89,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Programação: Pedro & Pedro
+text = "Programming: Pedro & Pedro
 Sound Design: Nivadra"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -108,7 +108,7 @@ offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "Voltar"
+text = "Return"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

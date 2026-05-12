@@ -13,7 +13,7 @@ func add_item(id: String, tex: Texture2D) -> bool:
 			reorganize()
 			return true
 			
-	$/root/World/HUD/DialogBox.display_text("Inventário cheio!")
+	$/root/World/HUD/DialogBox.display_text("Inventory full!")
 	return false
 
 func reorganize() -> void:

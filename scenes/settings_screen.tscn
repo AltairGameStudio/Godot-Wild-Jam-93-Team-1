@@ -29,8 +29,8 @@ columns = 2
 [node name="VFXLabel" type="Label" parent="GridContainer" unique_id=2039602798]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Efeitos
-Sonoros"
+text = "Sound
+effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -43,7 +43,7 @@ ticks_on_borders = true
 [node name="MusicLabel" type="Label" parent="GridContainer" unique_id=239025974]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Música"
+text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -67,6 +67,6 @@ offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "Voltar"
+text = "Return"
 
 [connection signal="pressed" from="SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
