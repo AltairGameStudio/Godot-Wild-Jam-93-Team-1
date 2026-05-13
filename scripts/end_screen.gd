@@ -10,4 +10,8 @@ func _on_retry_button_pressed() -> void:
 	GameManager.start_game()
 
 func _on_main_menu_button_pressed() -> void:
+<<<<<<< HEAD
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+=======
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+>>>>>>> 45327c7 (update)

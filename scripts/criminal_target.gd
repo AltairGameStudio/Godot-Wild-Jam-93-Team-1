@@ -177,10 +177,15 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	if kill_classification == KillType.LEGITIMATE:
+<<<<<<< HEAD
 		$/root/World/HUD/DialogBox.display_text("Legitimate kill: +" + str(legitimate_kill_points), false)
 		GameManager.update_points(legitimate_kill_points)
 	else:
 		$/root/World/HUD/DialogBox.display_text("Illegitimate kill: +" + str(illegitimate_kill_points), false)
+=======
+		GameManager.update_points(legitimate_kill_points)
+	else:
+>>>>>>> 45327c7 (update)
 		GameManager.update_points(illegitimate_kill_points)
 		
 	remove_from_scene()
@@ -189,6 +194,7 @@ func on_interact() -> void:
 	# A prisão só é possível se o criminoso estiver rendido
 	if current_state == State.SURRENDERING:
 		arrest()
+<<<<<<< HEAD
 	# elif current_state == State.HOSTILE:
 	# 	$/root/World/HUD/DialogBox.display_text("Impossível prender agora. O criminoso está reagindo.")
 	# else:
@@ -196,6 +202,15 @@ func on_interact() -> void:
 
 func arrest() -> void:
 	$/root/World/HUD/DialogBox.display_text("Arrest: +" + str(capture_points), false)
+=======
+	elif current_state == State.HOSTILE:
+		$/root/World/HUD/DialogBox.display_text("Impossível prender agora. O criminoso está reagindo.")
+	else:
+		$/root/World/HUD/DialogBox.display_text("O suspeito ainda não foi confrontado.")
+
+func arrest() -> void:
+	$/root/World/HUD/DialogBox.display_text("Criminoso capturado vivo")
+>>>>>>> 45327c7 (update)
 	GameManager.update_points(capture_points)
 	
 	# Por enquanto, ele apenas desaparece da cena
@@ -204,4 +219,8 @@ func arrest() -> void:
 func remove_from_scene() -> void:
 	queue_free()
 	if get_parent().get_child_count() <= 1:
+<<<<<<< HEAD
 		GameManager.win_game()
+=======
+		GameManager.win_game()
+>>>>>>> 45327c7 (update)

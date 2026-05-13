@@ -67,7 +67,11 @@ func _notification(what: int) -> void:
 					
 					# Verifica se o objeto está dentro da InteractArea do jogador
 					if player and not object in player.interact_area.get_overlapping_bodies():
+<<<<<<< HEAD
 						# $/root/World/HUD/DialogBox.display_text("Chegue mais perto e olhe para o obstáculo para usar o item.")
+=======
+						$/root/World/HUD/DialogBox.display_text("Chegue mais perto e olhe para o obstáculo para usar o item.")
+>>>>>>> 45327c7 (update)
 						break
 						
 					var success = object.on_item_used(item_id)

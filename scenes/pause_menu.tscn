@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://bgnlkgksr0r1a"]
 
 [ext_resource type="Script" uid="uid://clshnwdsgaep7" path="res://scripts/pause_menu.gd" id="1_myx47"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_kukqi"]
+=======
+[ext_resource type="FontFile" uid="uid://cv8tegtqd2y7y" path="res://Assets/Font/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection_ii/ConnectionII.otf" id="2_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://mi6wx6jsgsnr" path="res://Assets/Tiles/Large tiles/Thin outline/tile_0022.png" id="3_v4r4p"]
+[ext_resource type="Script" uid="uid://bw5xx3cvv46l3" path="res://scripts/Settings_Screen_pause.gd" id="5_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://d372i0jf0d8lg" path="res://Assets/Tiles/Large tiles/Thin outline/tile_0029.png" id="5_88e76"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n87rw"]
+load_path = "res://.godot/imported/tile_0028.png-573e05f5f264603b95fadeacc5267e25.ctex"
+>>>>>>> 45327c7 (update)
 
 [node name="PauseMenu" type="Control" unique_id=956680066]
 layout_mode = 3
@@ -12,13 +22,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_myx47")
 
+<<<<<<< HEAD
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1682234798]
+=======
+[node name="Pause_Menu" type="Control" parent="." unique_id=472338864]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Background" type="TextureRect" parent="Pause_Menu" unique_id=1643654249]
+texture_filter = 1
+>>>>>>> 45327c7 (update)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
 anchor_top = 0.1
 anchor_right = 0.65
 anchor_bottom = 0.9
+<<<<<<< HEAD
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -42,12 +64,59 @@ theme_override_font_sizes/font_size = 64
 text = "Paused"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=244364459]
+=======
+offset_left = 596.0
+offset_top = 23.0
+offset_right = 1142.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_n87rw")
+
+[node name="Pause_bg" type="TextureRect" parent="Pause_Menu" unique_id=2115697508]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 712.0
+offset_top = 104.0
+offset_right = 1088.0
+offset_bottom = 237.0
+mouse_filter = 2
+texture = ExtResource("5_88e76")
+
+[node name="PauseLabel" type="Label" parent="Pause_Menu" unique_id=1701533708]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.14
+anchor_right = 0.5
+anchor_bottom = 0.14
+offset_left = 761.0
+offset_top = 120.4
+offset_right = 1041.0
+offset_bottom = 220.4
+grow_horizontal = 2
+scale = Vector2(0.88, 1)
+theme_override_fonts/font = ExtResource("2_7l7mv")
+theme_override_font_sizes/font_size = 100
+text = "PAUSE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu" unique_id=244364459]
+z_index = 2
+z_as_relative = false
+>>>>>>> 45327c7 (update)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+<<<<<<< HEAD
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -78,3 +147,173 @@ layout_mode = 1
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+=======
+offset_left = 766.0
+offset_top = 232.99998
+offset_right = 798.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.177464, 2.8884902)
+theme_override_constants/separation = 32
+
+[node name="ResumeButton" type="TextureButton" parent="Pause_Menu/VBoxContainer" unique_id=953870120]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("3_v4r4p")
+texture_pressed = ExtResource("3_v4r4p")
+texture_hover = ExtResource("3_v4r4p")
+texture_disabled = ExtResource("3_v4r4p")
+texture_focused = ExtResource("3_v4r4p")
+
+[node name="SettingsButton" type="TextureButton" parent="Pause_Menu/VBoxContainer" unique_id=1049164484]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("3_v4r4p")
+texture_pressed = ExtResource("3_v4r4p")
+texture_hover = ExtResource("3_v4r4p")
+texture_disabled = ExtResource("3_v4r4p")
+texture_focused = ExtResource("3_v4r4p")
+
+[node name="MainMenuButton" type="TextureButton" parent="Pause_Menu/VBoxContainer" unique_id=1979190645]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("3_v4r4p")
+texture_pressed = ExtResource("3_v4r4p")
+texture_hover = ExtResource("3_v4r4p")
+texture_disabled = ExtResource("3_v4r4p")
+texture_focused = ExtResource("3_v4r4p")
+
+[node name="Button_Label" type="Control" parent="Pause_Menu" unique_id=2125376083]
+z_index = 2
+z_as_relative = false
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.50100005
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1783.1998
+offset_bottom = 888.0
+mouse_filter = 2
+
+[node name="Label_Resume" type="Label" parent="Pause_Menu/Button_Label" unique_id=705600544]
+texture_filter = 1
+layout_mode = 0
+offset_left = 819.0
+offset_top = 276.0
+offset_right = 1014.0
+offset_bottom = 336.0
+scale = Vector2(0.84000003, 0.84000003)
+theme_override_fonts/font = ExtResource("2_7l7mv")
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="Label_Settings" type="Label" parent="Pause_Menu/Button_Label" unique_id=1236964933]
+texture_filter = 1
+layout_mode = 0
+offset_left = 819.0
+offset_top = 460.0
+offset_right = 1014.0
+offset_bottom = 520.0
+scale = Vector2(0.84000003, 0.84000003)
+theme_override_fonts/font = ExtResource("2_7l7mv")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="Label_Main_Menu" type="Label" parent="Pause_Menu/Button_Label" unique_id=2095383902]
+texture_filter = 1
+layout_mode = 0
+offset_left = 819.0
+offset_top = 647.0
+offset_right = 1014.0
+offset_bottom = 707.0
+scale = Vector2(0.6000012, 0.84000003)
+theme_override_fonts/font = ExtResource("2_7l7mv")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="Settings_Screen" type="Control" parent="." unique_id=1933539804]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_7l7mv")
+
+[node name="SettingsScreen" type="ColorRect" parent="Settings_Screen" unique_id=758672754]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+mouse_filter = 1
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Settings_Screen/SettingsScreen" unique_id=345318632]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 2
+
+[node name="VFXLabel" type="Label" parent="Settings_Screen/SettingsScreen/GridContainer" unique_id=2039602798]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Efeitos
+Sonoros"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VFXSlider" type="HSlider" parent="Settings_Screen/SettingsScreen/GridContainer" unique_id=32540723]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+ticks_on_borders = true
+
+[node name="MusicLabel" type="Label" parent="Settings_Screen/SettingsScreen/GridContainer" unique_id=239025974]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Música"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Settings_Screen/SettingsScreen/GridContainer" unique_id=1887503695]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+ticks_on_borders = true
+
+[node name="SettingsBackButton" type="Button" parent="Settings_Screen/SettingsScreen" unique_id=382880186]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.5
+offset_top = -78.0
+offset_right = 50.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
+
+[connection signal="pressed" from="Pause_Menu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause_Menu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Pause_Menu/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Settings_Screen/SettingsScreen/SettingsBackButton" to="Settings_Screen" method="_on_settings_back_button_pressed"]
+>>>>>>> 45327c7 (update)
