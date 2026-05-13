@@ -10,6 +10,8 @@ func _ready() -> void:
 	add_child(dismiss_timer)
 	dismiss_timer.timeout.connect(self.dismiss)
 
+func display_text(text: String, stops_player: bool = false) -> void:
+	if needs_interaction and not stops_player:
 <<<<<<< HEAD
 func display_text(text: String, pauses_game: bool = true) -> void:
 	if needs_interaction and not pauses_game:
@@ -17,14 +19,6 @@ func display_text(text: String, pauses_game: bool = true) -> void:
 	$DialogLabel.text = text
 	dialog_box_visible = true
 	needs_interaction = pauses_game
-=======
-func display_text(text: String, stops_player: bool = false) -> void:
-	if needs_interaction and not stops_player:
-		return # Se já está esperando interação, não mostra outro texto
-	$DialogLabel.text = text
-	dialog_box_visible = true
-	needs_interaction = stops_player
->>>>>>> 45327c7 (update)
 	var fade_in_time = 0.3
 	if fade_out_tween:
 		fade_out_tween.kill()

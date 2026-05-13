@@ -202,15 +202,6 @@ func on_interact() -> void:
 
 func arrest() -> void:
 	$/root/World/HUD/DialogBox.display_text("Arrest: +" + str(capture_points), false)
-=======
-	elif current_state == State.HOSTILE:
-		$/root/World/HUD/DialogBox.display_text("Impossível prender agora. O criminoso está reagindo.")
-	else:
-		$/root/World/HUD/DialogBox.display_text("O suspeito ainda não foi confrontado.")
-
-func arrest() -> void:
-	$/root/World/HUD/DialogBox.display_text("Criminoso capturado vivo")
->>>>>>> 45327c7 (update)
 	GameManager.update_points(capture_points)
 	
 	# Por enquanto, ele apenas desaparece da cena
