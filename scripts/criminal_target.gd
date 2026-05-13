@@ -177,8 +177,10 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	if kill_classification == KillType.LEGITIMATE:
+		$/root/World/HUD/DialogBox.display_text("Legitimate kill: +" + str(legitimate_kill_points), false)
 		GameManager.update_points(legitimate_kill_points)
 	else:
+		$/root/World/HUD/DialogBox.display_text("Illegitimate kill: +" + str(illegitimate_kill_points), false)
 		GameManager.update_points(illegitimate_kill_points)
 		
 	remove_from_scene()
@@ -193,7 +195,7 @@ func on_interact() -> void:
 	#	$/root/World/HUD/DialogBox.display_text("O suspeito ainda não foi confrontado.")
 
 func arrest() -> void:
-	$/root/World/HUD/DialogBox.display_text("Criminal captured alive")
+	$/root/World/HUD/DialogBox.display_text("Arrest: +" + str(capture_points), false)
 	GameManager.update_points(capture_points)
 	
 	# Por enquanto, ele apenas desaparece da cena
