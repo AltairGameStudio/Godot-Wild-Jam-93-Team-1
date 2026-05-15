@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cdyycmmgbmnmi" path="res://assets/items/genericItem_color_135.png" id="9_7iits"]
 [ext_resource type="Texture2D" uid="uid://orrnnibnvoo3" path="res://assets/items/genericItem_color_027.png" id="10_oo54l"]
 [ext_resource type="Texture2D" uid="uid://buyauhpabgelp" path="res://assets/items/genericItem_color_108.png" id="11_kpybi"]
+[ext_resource type="Texture2D" uid="uid://cx0nwy44t1a23" path="res://assets/items/genericItem_color_023_head.png" id="12_7iits"]
 [ext_resource type="Texture2D" uid="uid://es71kuughw8u" path="res://assets/items/genericItem_color_151.png" id="12_ctatt"]
 [ext_resource type="Texture2D" uid="uid://cq1p15wtk223v" path="res://assets/items/genericItem_color_004.png" id="13_xgqkh"]
 [ext_resource type="Texture2D" uid="uid://c86jh7ubd1c16" path="res://assets/items/genericItem_color_013.png" id="14_munwf"]
@@ -109,6 +110,7 @@ item_icon = ExtResource("11_kpybi")
 [node name="SledgehammerHead" parent="CollectableItems" unique_id=2120967012 instance=ExtResource("6_i7141")]
 position = Vector2(1637, -2783)
 item_id = "sledgehammer_head"
+item_icon = ExtResource("12_7iits")
 
 [node name="Badge" parent="CollectableItems" unique_id=1347412765 instance=ExtResource("6_i7141")]
 position = Vector2(4699, -1262)

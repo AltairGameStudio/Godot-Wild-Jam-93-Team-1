@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED_EQUIPPED = 150.0
-const SPEED_UNEQUIPPED = 300.0
+const SPEED_EQUIPPED = 200.0
+const SPEED_UNEQUIPPED = 400.0
 
 @onready var aim_raycast = $AimRayCast
 @onready var interact_area = $InteractArea
