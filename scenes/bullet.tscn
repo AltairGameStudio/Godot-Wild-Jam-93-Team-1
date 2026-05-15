@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fmpm61f7hrgp"]
+
+[ext_resource type="Texture2D" uid="uid://ddsqrhafejwo2" path="res://assets/player/weapon_gun.png" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://ddkpro6auadn7" path="res://scripts/bullet.gd" id="1_y25gk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
+size = Vector2(10, 18.5)
+
+[node name="Bullet" type="Area2D" unique_id=1420602840]
+script = ExtResource("1_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1369935812]
+texture = ExtResource("1_mkf8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2008589485]
+position = Vector2(0.25, 2.1855694e-08)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_y25gk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

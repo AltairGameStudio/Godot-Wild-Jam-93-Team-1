@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dga3w2ehyndap" path="res://assets/player/hitman1_stand.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bcstws6dvwbmk" path="res://assets/player/hitman1_hold.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://dbq7r3guj3y3l" path="res://assets/player/hitman1_gun.png" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://fmpm61f7hrgp" path="res://scenes/bullet.tscn" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(83, 108)
@@ -16,16 +17,18 @@ script = ExtResource("1_g2els")
 sprite_idle = ExtResource("2_dqkch")
 sprite_walk = ExtResource("2_g2els")
 sprite_equipped = ExtResource("4_qlg0r")
+bullet_scene = ExtResource("5_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=835406601]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_g2els")
+texture = ExtResource("4_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990140034]
 position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="AimRayCast" type="RayCast2D" parent="." unique_id=776058415]
+position = Vector2(56, 24)
 target_position = Vector2(800, 0)
 
 [node name="InteractArea" type="Area2D" parent="." unique_id=1513841751]
@@ -41,11 +44,11 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="TracerLine" type="Line2D" parent="." unique_id=565546340]
+position = Vector2(10, 0)
 width = 2.0
 default_color = Color(1, 1, 0.49411765, 1)
 
 [node name="HealBar" type="ProgressBar" parent="." unique_id=1614195437]
-visible = false
 top_level = true
 offset_left = -64.0
 offset_top = -78.0

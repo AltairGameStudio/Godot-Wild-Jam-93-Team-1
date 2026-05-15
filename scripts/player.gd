@@ -31,6 +31,8 @@ var is_weapon_equipped: bool = false
 var current_heal_time: float = 0.0
 var is_healing: bool = false
 
+@export var bullet_scene: PackedScene
+
 func _physics_process(delta: float) -> void:
 	if is_healing:
 		# Mantém a barra fixa acima da cabeça do player
@@ -86,35 +88,18 @@ func shoot() -> void:
 	# Trava a arma temporariamente
 	can_shoot = false
 	
-	# Adiciona a imprecisão no tiro
-	var original_rotation = aim_raycast.rotation
-	aim_raycast.rotation += deg_to_rad(randf_range(-bullet_spread, bullet_spread))
-	
-	aim_raycast.force_raycast_update()
-	
-	# Limpa os pontos anteriores e adiciona o ponto de origem
-	tracer_line.clear_points()
-	tracer_line.add_point(aim_raycast.position)
-	
-	if aim_raycast.is_colliding():
-		var target = aim_raycast.get_collider()
+	if bullet_scene:
+		# Cria uma bala
+		var bullet = bullet_scene.instantiate()
 		
-		# Se o tiro bateu em algo, desenha a linha até o ponto de impacto
-		tracer_line.add_point(to_local(aim_raycast.get_collision_point()))
+		get_tree().root.add_child(bullet)
 		
-		if target.has_method("take_damage"):
-			target.take_damage(1)
-			print("Acertou: ", target.name)
-	else:
-		# Se o tiro foi no vazio, desenha a linha até o limite
-		var max_range_point = aim_raycast.position + Vector2(800, 0).rotated(aim_raycast.rotation)
-		tracer_line.add_point(max_range_point)
-	
-	# Faz a linha desaparecer rapidamente
-	get_tree().create_timer(0.05).timeout.connect(func(): tracer_line.clear_points())
-	
-	# Devolve a arma para a posição reta
-	aim_raycast.rotation = original_rotation
+		# Define a posição de saída
+		bullet.global_position = aim_raycast.global_position
+		
+		# Aplica um spread de erro na mira
+		var spread_angle = deg_to_rad(randf_range(-bullet_spread, bullet_spread))
+		bullet.global_rotation = aim_raycast.global_rotation + spread_angle
 	
 	# Cooldown do tiro
 	await get_tree().create_timer(shoot_cooldown).timeout
