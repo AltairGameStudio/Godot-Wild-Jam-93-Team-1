@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://fmpm61f7hrgp" path="res://scenes/bullet.tscn" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+resource_local_to_scene = true
 size = Vector2(83, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
@@ -21,7 +22,7 @@ bullet_scene = ExtResource("5_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=835406601]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_qlg0r")
+texture = ExtResource("2_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990140034]
 position = Vector2(2.5, 0)
