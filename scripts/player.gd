@@ -9,8 +9,8 @@ const SPEED_UNEQUIPPED = 300.0
 @onready var heal_bar = $HealBar
 
 @export var max_health: int = 5
-# var current_health: int = max_health
-var current_health: int = 2
+var current_health: int = max_health
+# var current_health: int = 2
 var can_shoot: bool = true
 # Tempo entre cada tiro
 @export var shoot_cooldown: float = 0.5

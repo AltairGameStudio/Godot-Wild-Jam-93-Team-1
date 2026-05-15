@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	match current_state:
 		State.IDLE:
 			velocity = Vector2.ZERO
-			if distance <= detection_radius:
+			if distance <= detection_radius and is_player_visible():
 				decide_initial_reaction()
 				
 		State.SURRENDERING:
@@ -205,3 +205,19 @@ func remove_from_scene() -> void:
 	queue_free()
 	if get_parent().get_child_count() <= 1:
 		GameManager.win_game()
+
+func is_player_visible() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	
+	# Cria uma linha do criminoso até o player
+	var query = PhysicsRayQueryParameters2D.create(global_position, player.global_position)
+	# Garante que o raio não colida com o próprio criminoso
+	query.exclude = [self]
+	# Dispara o raio e pega o primeiro objeto que ele atinge
+	var result = space_state.intersect_ray(query)
+	
+	# Se bateu no player, não há paredes bloqueando a visão
+	if result and result.collider == player:
+		return true
+		
+	return false
