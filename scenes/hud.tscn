@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
 [ext_resource type="PackedScene" uid="uid://bimjl21vj5gsa" path="res://scenes/victory_screen.tscn" id="7_hd3ao"]
 [ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
+[ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
+[ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
 bg_color = Color(0.69411767, 0, 0, 1)
@@ -289,12 +291,14 @@ show_percentage = false
 script = ExtResource("6_047uy")
 
 [node name="Panel" type="Panel" parent="." unique_id=687840056]
+visible = false
 offset_left = 30.0
 offset_top = 19.0
 offset_right = 90.0
 offset_bottom = 79.0
 
 [node name="MedkitCounter" type="Label" parent="Panel" unique_id=1669898458]
+visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 37.0
@@ -314,3 +318,21 @@ visible = false
 [node name="PauseMenu" parent="." unique_id=956680066 instance=ExtResource("8_hd3ao")]
 process_mode = 2
 visible = false
+
+[node name="MedkitStatus" type="HBoxContainer" parent="." unique_id=269994840]
+visible = false
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 90.0
+offset_bottom = 79.0
+script = ExtResource("11_apjy4")
+
+[node name="TextureRect" type="TextureRect" parent="MedkitStatus" unique_id=874370524]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("12_5n1hp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CountLabel" type="Label" parent="MedkitStatus" unique_id=55929161]
+layout_mode = 2

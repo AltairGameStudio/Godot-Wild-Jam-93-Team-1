@@ -7,6 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://cf5v600qr0lhc" path="res://scenes/obstacle.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bpdjs6e5pu01t" path="res://scenes/collectable_item.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://cehhy8a3xl28e" path="res://scenes/criminal_target.tscn" id="7_i7141"]
+[ext_resource type="Texture2D" uid="uid://c1di3a1m5iifw" path="res://assets/items/genericItem_color_009.png" id="7_pm21f"]
+[ext_resource type="Texture2D" uid="uid://xtk22ernc2aq" path="res://assets/items/genericItem_color_023.png" id="8_2lf6f"]
+[ext_resource type="Texture2D" uid="uid://cdyycmmgbmnmi" path="res://assets/items/genericItem_color_135.png" id="9_7iits"]
+[ext_resource type="Texture2D" uid="uid://orrnnibnvoo3" path="res://assets/items/genericItem_color_027.png" id="10_oo54l"]
+[ext_resource type="Texture2D" uid="uid://buyauhpabgelp" path="res://assets/items/genericItem_color_108.png" id="11_kpybi"]
+[ext_resource type="Texture2D" uid="uid://es71kuughw8u" path="res://assets/items/genericItem_color_151.png" id="12_ctatt"]
+[ext_resource type="Texture2D" uid="uid://cq1p15wtk223v" path="res://assets/items/genericItem_color_004.png" id="13_xgqkh"]
+[ext_resource type="Texture2D" uid="uid://c86jh7ubd1c16" path="res://assets/items/genericItem_color_013.png" id="14_munwf"]
+[ext_resource type="Texture2D" uid="uid://m26rd1npvqw4" path="res://assets/items/genericItem_color_075.png" id="15_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://daysy7naq2upx" path="res://assets/items/genericItem_color_155.png" id="16_0nbtd"]
+[ext_resource type="Texture2D" uid="uid://dbeyivr0y5xfj" path="res://assets/items/genericItem_color_035.png" id="17_37qwj"]
+[ext_resource type="Texture2D" uid="uid://2o08qfcth0sk" path="res://assets/items/genericItem_color_096.png" id="18_navra"]
+[ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="20_2lf6f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("3_4wyf3")
@@ -71,22 +84,27 @@ position = Vector2(4589, -4349)
 [node name="Pliers" parent="CollectableItems" unique_id=257072854 instance=ExtResource("6_i7141")]
 position = Vector2(-4696, -4520)
 item_id = "pliers"
+item_icon = ExtResource("7_pm21f")
 
 [node name="Sledgehammer" parent="CollectableItems" unique_id=915468564 instance=ExtResource("6_i7141")]
 position = Vector2(-4813, -4157)
 item_id = "sledgehammer"
+item_icon = ExtResource("8_2lf6f")
 
 [node name="Spatula" parent="CollectableItems" unique_id=1146840372 instance=ExtResource("6_i7141")]
 position = Vector2(-436, -5393)
 item_id = "spatula"
+item_icon = ExtResource("9_7iits")
 
 [node name="Brush" parent="CollectableItems" unique_id=979698011 instance=ExtResource("6_i7141")]
 position = Vector2(1485, -4977)
 item_id = "brush"
+item_icon = ExtResource("10_oo54l")
 
 [node name="Acid" parent="CollectableItems" unique_id=1111978872 instance=ExtResource("6_i7141")]
 position = Vector2(2917, -5786)
 item_id = "acid"
+item_icon = ExtResource("11_kpybi")
 
 [node name="SledgehammerHead" parent="CollectableItems" unique_id=2120967012 instance=ExtResource("6_i7141")]
 position = Vector2(1637, -2783)
@@ -95,30 +113,37 @@ item_id = "sledgehammer_head"
 [node name="Badge" parent="CollectableItems" unique_id=1347412765 instance=ExtResource("6_i7141")]
 position = Vector2(4699, -1262)
 item_id = "badge"
+item_icon = ExtResource("12_ctatt")
 
 [node name="Wrench" parent="CollectableItems" unique_id=6856733 instance=ExtResource("6_i7141")]
 position = Vector2(3042, 2347)
 item_id = "wrench"
+item_icon = ExtResource("13_xgqkh")
 
 [node name="PocketKnife" parent="CollectableItems" unique_id=1746113607 instance=ExtResource("6_i7141")]
 position = Vector2(2412, 4152)
 item_id = "pocket_knife"
+item_icon = ExtResource("14_munwf")
 
 [node name="FloppyDisk" parent="CollectableItems" unique_id=79652840 instance=ExtResource("6_i7141")]
 position = Vector2(-4593, 3939)
 item_id = "floppy_disk"
+item_icon = ExtResource("15_ts3gi")
 
 [node name="Key" parent="CollectableItems" unique_id=146068009 instance=ExtResource("6_i7141")]
 position = Vector2(-945, -592)
 item_id = "key"
+item_icon = ExtResource("16_0nbtd")
 
 [node name="Book" parent="CollectableItems" unique_id=690984271 instance=ExtResource("6_i7141")]
 position = Vector2(-4724, -3644)
 item_id = "book"
+item_icon = ExtResource("17_37qwj")
 
 [node name="Ticket" parent="CollectableItems" unique_id=6522644 instance=ExtResource("6_i7141")]
 position = Vector2(-4436, 866)
 item_id = "ticket"
+item_icon = ExtResource("18_navra")
 
 [node name="Obstacles" type="Node" parent="." unique_id=325017663]
 
@@ -215,35 +240,44 @@ success_text = "The lens is covered. The sensor is gone and the door opens."
 [node name="MedKit" parent="MedKits" unique_id=489590938 instance=ExtResource("6_i7141")]
 position = Vector2(-1552, -5825)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit9" parent="MedKits" unique_id=683775497 instance=ExtResource("6_i7141")]
 position = Vector2(-4386, -5218)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit2" parent="MedKits" unique_id=1356687314 instance=ExtResource("6_i7141")]
 position = Vector2(4424, 1720)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit5" parent="MedKits" unique_id=2022454271 instance=ExtResource("6_i7141")]
 position = Vector2(-3214, -3576)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit8" parent="MedKits" unique_id=1397139968 instance=ExtResource("6_i7141")]
 position = Vector2(-4552, -1153)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit6" parent="MedKits" unique_id=691274930 instance=ExtResource("6_i7141")]
 position = Vector2(-3236, 2447)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit7" parent="MedKits" unique_id=1135332156 instance=ExtResource("6_i7141")]
 position = Vector2(132, 4004)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit3" parent="MedKits" unique_id=929505304 instance=ExtResource("6_i7141")]
 position = Vector2(1759, 924)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")
 
 [node name="MedKit4" parent="MedKits" unique_id=1076500514 instance=ExtResource("6_i7141")]
 position = Vector2(4620, -5721)
 is_medkit = true
+item_icon = ExtResource("20_2lf6f")

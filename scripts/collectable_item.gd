@@ -4,6 +4,12 @@ extends Node2D
 @export var item_id: String = "medkit"
 @export var item_icon: Texture2D
 
+@onready var sprite_2d = $Sprite2D
+
+func _ready() -> void:
+	if item_icon and sprite_2d:
+		sprite_2d.texture = item_icon
+
 func on_interact() -> void:
 	if is_medkit:
 		$/root/World/HUD/DialogBox.display_text("You picked up: " + item_id, false)
