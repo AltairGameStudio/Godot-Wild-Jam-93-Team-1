@@ -183,3 +183,41 @@ required_item = "pocket_knife"
 position = Vector2(-1887, -2524)
 rotation = 1.5707964
 required_item = "brush"
+
+[node name="MedKits" type="Node" parent="." unique_id=1409558140]
+
+[node name="MedKit" parent="MedKits" unique_id=489590938 instance=ExtResource("6_i7141")]
+position = Vector2(-1552, -5825)
+is_medkit = true
+
+[node name="MedKit9" parent="MedKits" unique_id=683775497 instance=ExtResource("6_i7141")]
+position = Vector2(-4386, -5218)
+is_medkit = true
+
+[node name="MedKit2" parent="MedKits" unique_id=1356687314 instance=ExtResource("6_i7141")]
+position = Vector2(4424, 1720)
+is_medkit = true
+
+[node name="MedKit5" parent="MedKits" unique_id=2022454271 instance=ExtResource("6_i7141")]
+position = Vector2(-3214, -3576)
+is_medkit = true
+
+[node name="MedKit8" parent="MedKits" unique_id=1397139968 instance=ExtResource("6_i7141")]
+position = Vector2(-4552, -1153)
+is_medkit = true
+
+[node name="MedKit6" parent="MedKits" unique_id=691274930 instance=ExtResource("6_i7141")]
+position = Vector2(-3236, 2447)
+is_medkit = true
+
+[node name="MedKit7" parent="MedKits" unique_id=1135332156 instance=ExtResource("6_i7141")]
+position = Vector2(132, 4004)
+is_medkit = true
+
+[node name="MedKit3" parent="MedKits" unique_id=929505304 instance=ExtResource("6_i7141")]
+position = Vector2(1759, 924)
+is_medkit = true
+
+[node name="MedKit4" parent="MedKits" unique_id=1076500514 instance=ExtResource("6_i7141")]
+position = Vector2(4620, -5721)
+is_medkit = true
