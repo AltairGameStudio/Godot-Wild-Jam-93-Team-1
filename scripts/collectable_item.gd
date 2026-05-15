@@ -6,6 +6,7 @@ extends Node2D
 
 func on_interact() -> void:
 	if is_medkit:
+		$/root/World/HUD/DialogBox.display_text("You picked up: " + item_id, false)
 		GameManager.add_medkit(1)
 		queue_free()
 	else:
@@ -19,7 +20,7 @@ func on_interact() -> void:
 			var success = inventory.add_item(item_id, item_icon)
 			
 			if success:
-				$/root/World/HUD/DialogBox.display_text("You picked up: " + item_id)
+				$/root/World/HUD/DialogBox.display_text("You picked up: " + item_id, false)
 				# Destrói o item do chão
 				queue_free()
 		else:
