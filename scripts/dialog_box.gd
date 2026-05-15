@@ -24,7 +24,7 @@ func display_text(text: String, pauses_game: bool = true) -> void:
 		get_tree().paused = true
 		dismiss_timer.stop() # Para o timer caso ele já estivesse contando
 	else:
-		var reading_time = max(2.0, text.length() * 0.025)
+		var reading_time = max(2.0, text.length() * 0.040)
 		var total_time = fade_in_time + reading_time
 		dismiss_timer.start(total_time)
 

@@ -126,63 +126,89 @@ item_id = "ticket"
 position = Vector2(-3166, -5888)
 rotation = 1.5707964
 scale = Vector2(0.8, 1)
+interaction_text = "A wire fence is in the way. I need something to cut these metal links."
+success_text = "The wire breaks, making a hole I can fit through."
 
 [node name="Valve" parent="Obstacles" unique_id=991383522 instance=ExtResource("5_71j4m")]
 position = Vector2(-221, -5855)
 rotation = 1.5707964
 required_item = "wrench"
+interaction_text = "This valve is stuck. I can't turn it by hand. I need a tool to grip it tight."
+success_text = "The tool grips it well. I turn it hard, and the path is safe."
 
 [node name="RestrictedPort" parent="Obstacles" unique_id=1586063019 instance=ExtResource("5_71j4m")]
 position = Vector2(2657, -4958)
 rotation = 1.5707964
 required_item = "badge"
+interaction_text = "This door has a card reader. I need some kind of ID card to get in."
+success_text = "The door unlocks and opens."
 
 [node name="GlassDoor" parent="Obstacles" unique_id=2074855931 instance=ExtResource("5_71j4m")]
 position = Vector2(3875, -4185)
 rotation = 1.5707964
 required_item = "sledgehammer_head"
+interaction_text = "A glass door is blocking me. I could throw something heavy to break it."
+success_text = "The glass shatters everywhere. Now I can pass."
 
 [node name="Padlock" parent="Obstacles" unique_id=1170816163 instance=ExtResource("5_71j4m")]
 position = Vector2(1253, -2781)
 rotation = 1.5707964
 required_item = "sledgehammer"
+interaction_text = "This rusty padlock is stuck. I need something heavy to smash it."
+success_text = "The old lock breaks into pieces. The way is clear."
 
 [node name="LockedDoor" parent="Obstacles" unique_id=629810843 instance=ExtResource("5_71j4m")]
 position = Vector2(4581, 291)
 required_item = "key"
+interaction_text = "This wooden door is locked. I just need the right key to open it."
+success_text = "The lock turns and the door opens."
 
 [node name="LiftingGate" parent="Obstacles" unique_id=1204693729 instance=ExtResource("5_71j4m")]
 position = Vector2(1572, 2083)
 required_item = "spatula"
+interaction_text = "This terminal is missing the lever. I need something flat and rigid to use as one."
+success_text = "I fit it into the lever position and activate the mechanism, opening the gate."
 
 [node name="Turnstile" parent="Obstacles" unique_id=408435309 instance=ExtResource("5_71j4m")]
 position = Vector2(3297, 4065)
 rotation = 1.5707964
 required_item = "ticket"
+interaction_text = "The turnstile is locked. Looks like it needs an old subway coin."
+success_text = "The coin works, and I can push my way through."
 
 [node name="Chain" parent="Obstacles" unique_id=229721854 instance=ExtResource("5_71j4m")]
 position = Vector2(-479, 2333)
 rotation = 1.5707964
 required_item = "acid"
+interaction_text = "A big chain locks this door. I need something to get rid of it."
+success_text = "The liquid burns through the metal. The chain drops to the floor."
 
 [node name="PressurePlate" parent="Obstacles" unique_id=67150944 instance=ExtResource("5_71j4m")]
 position = Vector2(-4126, 4069)
 rotation = 1.5707964
 required_item = "book"
+interaction_text = "The door needs weight on that floor plate to stay open. I have to leave something heavy there."
+success_text = "I drop the heavy book on the plate. The door stays open."
 
 [node name="Terminal" parent="Obstacles" unique_id=2030729326 instance=ExtResource("5_71j4m")]
 position = Vector2(-2848, 800)
 rotation = 1.5707964
 required_item = "floppy_disk"
+interaction_text = "This old computer controls the gate. It has a slot for an old, square disk."
+success_text = "The computer makes some noise, then says 'ACCESS GRANTED'. The gate opens."
 
 [node name="Canvas" parent="Obstacles" unique_id=1538920903 instance=ExtResource("5_71j4m")]
 position = Vector2(-4638, -222)
 required_item = "pocket_knife"
+interaction_text = "A thick tarp is blocking the passage. A small, sharp blade would cut through it easily."
+success_text = "I slice open the tarp and step through."
 
 [node name="MotionSensor" parent="Obstacles" unique_id=405060907 instance=ExtResource("5_71j4m")]
 position = Vector2(-1887, -2524)
 rotation = 1.5707964
 required_item = "brush"
+interaction_text = "A motion sensor is closing the door. I need to cover its lens so it can't see."
+success_text = "The lens is covered. The sensor is gone and the door opens."
 
 [node name="MedKits" type="Node" parent="." unique_id=1409558140]
 
