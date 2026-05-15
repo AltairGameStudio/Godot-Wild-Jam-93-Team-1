@@ -8,21 +8,39 @@
 [ext_resource type="PackedScene" uid="uid://cf5v600qr0lhc" path="res://scenes/obstacle.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bpdjs6e5pu01t" path="res://scenes/collectable_item.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://cehhy8a3xl28e" path="res://scenes/criminal_target.tscn" id="7_i7141"]
+[ext_resource type="Texture2D" uid="uid://bjbf4fsj6frq7" path="res://assets/enemies/model2/manBlue_stand.png" id="7_munwf"]
 [ext_resource type="Texture2D" uid="uid://c1di3a1m5iifw" path="res://assets/items/genericItem_color_009.png" id="7_pm21f"]
 [ext_resource type="Texture2D" uid="uid://xtk22ernc2aq" path="res://assets/items/genericItem_color_023.png" id="8_2lf6f"]
+[ext_resource type="Shader" uid="uid://4ewv4243cb7y" path="res://shaders/fog_of_war.gdshader" id="8_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://c684x3igmyun6" path="res://assets/enemies/model2/manBlue_hold.png" id="8_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://bxnl32c8nltg6" path="res://assets/enemies/model2/manBlue_gun.png" id="9_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://cdyycmmgbmnmi" path="res://assets/items/genericItem_color_135.png" id="9_7iits"]
+[ext_resource type="Texture2D" uid="uid://bnk0p3nxbatga" path="res://assets/enemies/model3/manBrown_stand.png" id="10_8u370"]
 [ext_resource type="Texture2D" uid="uid://orrnnibnvoo3" path="res://assets/items/genericItem_color_027.png" id="10_oo54l"]
 [ext_resource type="Texture2D" uid="uid://buyauhpabgelp" path="res://assets/items/genericItem_color_108.png" id="11_kpybi"]
+[ext_resource type="Texture2D" uid="uid://crquaxk6i83n6" path="res://assets/enemies/model3/manBrown_hold.png" id="11_rga7q"]
+[ext_resource type="Texture2D" uid="uid://b2qoy4euhl41e" path="res://assets/enemies/model3/manBrown_gun.png" id="12_6oujy"]
 [ext_resource type="Texture2D" uid="uid://cx0nwy44t1a23" path="res://assets/items/genericItem_color_023_head.png" id="12_7iits"]
 [ext_resource type="Texture2D" uid="uid://es71kuughw8u" path="res://assets/items/genericItem_color_151.png" id="12_ctatt"]
+[ext_resource type="Texture2D" uid="uid://bitf1ap5upgc0" path="res://assets/enemies/model4/manOld_stand.png" id="13_hi6a0"]
 [ext_resource type="Texture2D" uid="uid://cq1p15wtk223v" path="res://assets/items/genericItem_color_004.png" id="13_xgqkh"]
+[ext_resource type="Texture2D" uid="uid://cg3u1kd3te1ht" path="res://assets/enemies/model4/manOld_hold.png" id="14_eo1xk"]
 [ext_resource type="Texture2D" uid="uid://c86jh7ubd1c16" path="res://assets/items/genericItem_color_013.png" id="14_munwf"]
+[ext_resource type="Texture2D" uid="uid://bqu4kwlos0m67" path="res://assets/enemies/model4/manOld_gun.png" id="15_18clu"]
 [ext_resource type="Texture2D" uid="uid://m26rd1npvqw4" path="res://assets/items/genericItem_color_075.png" id="15_ts3gi"]
 [ext_resource type="Texture2D" uid="uid://daysy7naq2upx" path="res://assets/items/genericItem_color_155.png" id="16_0nbtd"]
+[ext_resource type="Texture2D" uid="uid://c2hsxoienmhu5" path="res://assets/enemies/model5/soldier1_stand.png" id="16_4wdv8"]
 [ext_resource type="Texture2D" uid="uid://dbeyivr0y5xfj" path="res://assets/items/genericItem_color_035.png" id="17_37qwj"]
+[ext_resource type="Texture2D" uid="uid://ucpy6xa3fdjf" path="res://assets/enemies/model5/soldier1_hold.png" id="17_d46x8"]
+[ext_resource type="Texture2D" uid="uid://bga7p08cwfoyv" path="res://assets/enemies/model5/soldier1_gun.png" id="18_3l05q"]
 [ext_resource type="Texture2D" uid="uid://2o08qfcth0sk" path="res://assets/items/genericItem_color_096.png" id="18_navra"]
+[ext_resource type="Texture2D" uid="uid://c4mgyxngou0mc" path="res://assets/enemies/model6/survivor1_stand.png" id="19_x28ej"]
+[ext_resource type="Texture2D" uid="uid://cpxlxuyxpn3fj" path="res://assets/enemies/model6/survivor1_hold.png" id="20_1jxku"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="20_2lf6f"]
-[ext_resource type="Shader" uid="uid://4ewv4243cb7y" path="res://shaders/fog_of_war.gdshader" id="8_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://ch22c8c5j3e56" path="res://assets/enemies/model6/survivor1_gun.png" id="21_1dgkn"]
+[ext_resource type="Texture2D" uid="uid://bxacqdi347qgp" path="res://assets/enemies/model1/womanGreen_stand.png" id="22_e68xj"]
+[ext_resource type="Texture2D" uid="uid://bxfbhv5jmhypp" path="res://assets/enemies/model1/womanGreen_hold.png" id="23_5hglh"]
+[ext_resource type="Texture2D" uid="uid://coj3hny4av3ot" path="res://assets/enemies/model1/womanGreen_gun.png" id="24_qg546"]
 
 [sub_resource type="Gradient" id="Gradient_i7141"]
 interpolation_mode = 1
@@ -94,33 +112,63 @@ tile_set = SubResource("TileSet_71j4m")
 
 [node name="CriminalTarget" parent="Criminals" unique_id=429802876 instance=ExtResource("7_i7141")]
 position = Vector2(4396, -2613)
+sprite_idle = ExtResource("7_munwf")
+sprite_walk = ExtResource("8_ts3gi")
+sprite_hostile = ExtResource("9_0nbtd")
 
 [node name="CriminalTarget4" parent="Criminals" unique_id=715505027 instance=ExtResource("7_i7141")]
 position = Vector2(3151, -470)
+sprite_idle = ExtResource("10_8u370")
+sprite_walk = ExtResource("11_rga7q")
+sprite_hostile = ExtResource("12_6oujy")
 
 [node name="CriminalTarget5" parent="Criminals" unique_id=101457500 instance=ExtResource("7_i7141")]
 position = Vector2(3844, 2524)
+sprite_idle = ExtResource("13_hi6a0")
+sprite_walk = ExtResource("14_eo1xk")
+sprite_hostile = ExtResource("15_18clu")
 
 [node name="CriminalTarget7" parent="Criminals" unique_id=1952222272 instance=ExtResource("7_i7141")]
 position = Vector2(-4169, 2484)
+sprite_idle = ExtResource("16_4wdv8")
+sprite_walk = ExtResource("17_d46x8")
+sprite_hostile = ExtResource("18_3l05q")
 
 [node name="CriminalTarget8" parent="Criminals" unique_id=217480014 instance=ExtResource("7_i7141")]
 position = Vector2(-978, 955)
+sprite_idle = ExtResource("19_x28ej")
+sprite_walk = ExtResource("20_1jxku")
+sprite_hostile = ExtResource("21_1dgkn")
 
 [node name="CriminalTarget9" parent="Criminals" unique_id=753181224 instance=ExtResource("7_i7141")]
 position = Vector2(-970, 112)
+sprite_idle = ExtResource("22_e68xj")
+sprite_walk = ExtResource("23_5hglh")
+sprite_hostile = ExtResource("24_qg546")
 
 [node name="CriminalTarget10" parent="Criminals" unique_id=754440311 instance=ExtResource("7_i7141")]
 position = Vector2(-954, -3465)
+sprite_idle = ExtResource("7_munwf")
+sprite_walk = ExtResource("8_ts3gi")
+sprite_hostile = ExtResource("9_0nbtd")
 
 [node name="CriminalTarget6" parent="Criminals" unique_id=1975981900 instance=ExtResource("7_i7141")]
 position = Vector2(4498, 3099)
+sprite_idle = ExtResource("10_8u370")
+sprite_walk = ExtResource("11_rga7q")
+sprite_hostile = ExtResource("12_6oujy")
 
 [node name="CriminalTarget2" parent="Criminals" unique_id=815589432 instance=ExtResource("7_i7141")]
 position = Vector2(779, -5592)
+sprite_idle = ExtResource("13_hi6a0")
+sprite_walk = ExtResource("14_eo1xk")
+sprite_hostile = ExtResource("15_18clu")
 
 [node name="CriminalTarget3" parent="Criminals" unique_id=916959591 instance=ExtResource("7_i7141")]
 position = Vector2(4589, -4349)
+sprite_idle = ExtResource("22_e68xj")
+sprite_walk = ExtResource("23_5hglh")
+sprite_hostile = ExtResource("24_qg546")
 
 [node name="CollectableItems" type="Node" parent="." unique_id=1501360921]
 

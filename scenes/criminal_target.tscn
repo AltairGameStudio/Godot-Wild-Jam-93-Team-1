@@ -1,28 +1,33 @@
 [gd_scene format=3 uid="uid://cehhy8a3xl28e"]
 
 [ext_resource type="Script" uid="uid://c51o3o2ev2vj4" path="res://scripts/criminal_target.gd" id="1_t718d"]
-[ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_xk3fx"]
+[ext_resource type="PackedScene" uid="uid://fmpm61f7hrgp" path="res://scenes/bullet.tscn" id="2_cx3cy"]
+[ext_resource type="Texture2D" uid="uid://c684x3igmyun6" path="res://assets/enemies/model2/manBlue_hold.png" id="3_cx3cy"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t718d"]
 light_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t718d"]
-size = Vector2(128, 129)
+size = Vector2(84, 108)
 
 [node name="CriminalTarget" type="CharacterBody2D" unique_id=1990985216]
 script = ExtResource("1_t718d")
+bullet_scene = ExtResource("2_cx3cy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=459075400]
 material = SubResource("CanvasItemMaterial_t718d")
-texture = ExtResource("1_xk3fx")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_cx3cy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138427321]
-position = Vector2(0, 0.5)
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_t718d")
 
 [node name="AimRayCast" type="RayCast2D" parent="." unique_id=1925198781]
+position = Vector2(58, 24)
 target_position = Vector2(800, 0)
 
 [node name="TracerLine" type="Line2D" parent="." unique_id=701012611]
+visible = false
 width = 2.0
 default_color = Color(1, 1, 0.47843137, 1)

@@ -6,23 +6,24 @@ extends Area2D
 
 var traveled_distance: float = 0.0
 
+# Guarda quem atirou
+var shooter: Node2D 
+
 func _physics_process(delta: float) -> void:
-	# Move a bala para frente
 	var move_amount = speed * delta
 	position += transform.x * move_amount
 	traveled_distance += move_amount
 	
-	# Destrói a bala se ela for longe demais
 	if traveled_distance >= max_range:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	# Ignora se a bala bater no próprio jogador
-	if body.is_in_group("player"):
+	# Se a bala bater no próprio atirador, ela simplesmente ignora
+	if body == shooter:
 		return
 		
-	# Se acertou um inimigo, aplica o dano
+	# Se bateu em qualquer outra coisa que toma dano...
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
-
+		
 	queue_free()

@@ -29,7 +29,12 @@ var movement_timer: Timer
 var shoot_timer: Timer
 
 @onready var aim_raycast = $AimRayCast
-@onready var tracer_line = $TracerLine
+@onready var sprite_2d = $Sprite2D
+
+@export var sprite_idle: Texture2D
+@export var sprite_walk: Texture2D
+@export var sprite_hostile: Texture2D
+@export var bullet_scene: PackedScene
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -60,7 +65,7 @@ func _physics_process(delta: float) -> void:
 				decide_initial_reaction()
 				
 		State.SURRENDERING:
-			look_at(player.global_position)
+			aim_at_player()
 			
 			# Direção base (para longe) com desvio aleatório
 			var base_dir = -global_position.direction_to(player.global_position)
@@ -79,7 +84,7 @@ func _physics_process(delta: float) -> void:
 				enter_hostile_state()
 			
 		State.HOSTILE:
-			look_at(player.global_position)
+			aim_at_player()
 			
 			# Direção base (ir para cima) com desvio aleatório
 			var base_dir = global_position.direction_to(player.global_position)
@@ -87,6 +92,8 @@ func _physics_process(delta: float) -> void:
 			
 			velocity = organic_dir * 120.0
 			move_and_slide()
+			
+	update_sprite()
 
 func decide_initial_reaction() -> void:
 	if not player.is_weapon_equipped:
@@ -102,14 +109,12 @@ func decide_initial_reaction() -> void:
 func enter_surrender_state() -> void:
 	if current_state == State.SURRENDERING: return
 	current_state = State.SURRENDERING
-	modulate = Color(1, 1, 0, 1) 
 	if randf() <= betray_chance:
 		will_betray = true
 
 func enter_hostile_state() -> void:
 	if current_state == State.HOSTILE: return
 	current_state = State.HOSTILE
-	modulate = Color(1, 0, 0, 1) 
 	
 	# Prepara a arma e começa o cooldown antes do primeiro tiro
 	start_shoot_cooldown()
@@ -127,35 +132,21 @@ func _on_shoot_timer_timeout() -> void:
 	start_shoot_cooldown()
 
 func shoot_at_player() -> void:
-	# Adiciona a imprecisão
-	var original_rotation = aim_raycast.rotation
-	aim_raycast.rotation += deg_to_rad(randf_range(-enemy_spread, enemy_spread))
-	
-	aim_raycast.force_raycast_update()
-	
-	# Limpa os pontos anteriores e adiciona o ponto de origem
-	tracer_line.clear_points()
-	tracer_line.add_point(aim_raycast.position)
-	
-	if aim_raycast.is_colliding():
-		var target = aim_raycast.get_collider()
+	if bullet_scene:
+		# Cria a cópia da bala
+		var bullet = bullet_scene.instantiate()
 		
-		# Se o tiro bateu em algo, desenha a linha até o ponto de impacto
-		tracer_line.add_point(to_local(aim_raycast.get_collision_point()))
+		# Define que este criminoso foi quem atirou
+		bullet.shooter = self
 		
-		if target.has_method("take_damage"):
-			target.take_damage(1)
-			print("Acertou: ", target.name)
-	else:
-		# Se o tiro foi no vazio, desenha a linha até o limite
-		var max_range_point = aim_raycast.position + Vector2(800, 0).rotated(aim_raycast.rotation)
-		tracer_line.add_point(max_range_point)
-	
-	# Faz a linha desaparecer rapidamente
-	get_tree().create_timer(0.05).timeout.connect(func(): tracer_line.clear_points())
-	
-	# Devolve a arma para a posição reta
-	aim_raycast.rotation = original_rotation
+		get_tree().root.add_child(bullet)
+		
+		# Define a posição de saída na ponta da arma
+		bullet.global_position = aim_raycast.global_position
+		
+		# Aplica o spread
+		var spread_angle = deg_to_rad(randf_range(-enemy_spread, enemy_spread))
+		bullet.global_rotation = aim_raycast.global_rotation + spread_angle
 
 func _on_movement_timer_timeout() -> void:
 	# A cada tick desse timer, o criminoso escolhe um desvio para esquivar
@@ -221,3 +212,22 @@ func is_player_visible() -> bool:
 		return true
 		
 	return false
+
+func aim_at_player() -> void:
+	var distance = global_position.distance_to(player.global_position)
+	var weapon_lateral_offset = aim_raycast.position.y
+	
+	if distance > abs(weapon_lateral_offset):
+		var base_angle = global_position.direction_to(player.global_position).angle()
+		var correction_angle = asin(weapon_lateral_offset / distance)
+		global_rotation = base_angle - correction_angle
+	else:
+		look_at(player.global_position)
+
+func update_sprite() -> void:
+	if current_state == State.HOSTILE:
+		sprite_2d.texture = sprite_hostile
+	elif velocity.length() > 0:
+		sprite_2d.texture = sprite_walk
+	else:
+		sprite_2d.texture = sprite_idle

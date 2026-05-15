@@ -92,6 +92,9 @@ func shoot() -> void:
 		# Cria uma bala
 		var bullet = bullet_scene.instantiate()
 		
+		# Define que foi o jogador quem atirou
+		bullet.shooter = self
+		
 		get_tree().root.add_child(bullet)
 		
 		# Define a posição de saída
