@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://c51o3o2ev2vj4" path="res://scripts/criminal_target.gd" id="1_t718d"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_xk3fx"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t718d"]
+light_mode = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t718d"]
 size = Vector2(128, 129)
 
@@ -10,6 +13,7 @@ size = Vector2(128, 129)
 script = ExtResource("1_t718d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=459075400]
+material = SubResource("CanvasItemMaterial_t718d")
 texture = ExtResource("1_xk3fx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138427321]
