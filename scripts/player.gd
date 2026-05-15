@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		process_healing(delta)
-		look_at(get_global_mouse_position())
+		aim_at_mouse()
 		return
 
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, current_speed)
 
 	move_and_slide()
-	look_at(get_global_mouse_position())
+	aim_at_mouse()
 	update_sprite()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -156,3 +156,25 @@ func update_sprite() -> void:
 		sprite_2d.texture = sprite_walk
 	else:
 		sprite_2d.texture = sprite_idle
+
+func aim_at_mouse() -> void:
+	var mouse_pos = get_global_mouse_position()
+	
+	if is_weapon_equipped:
+		var distance = global_position.distance_to(mouse_pos)
+		
+		# Pega a distância lateral da arma em relação ao centro do player
+		var weapon_lateral_offset = aim_raycast.position.y 
+		
+		if distance > abs(weapon_lateral_offset):
+			var base_angle = global_position.direction_to(mouse_pos).angle()
+			
+			# Calcula o ângulo de compensação
+			var correction_angle = asin(weapon_lateral_offset / distance)
+			
+			# Rotaciona o player com compensação
+			global_rotation = base_angle - correction_angle
+		else:
+			look_at(mouse_pos)
+	else:
+		look_at(mouse_pos)
