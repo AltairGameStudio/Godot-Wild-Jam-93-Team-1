@@ -1,22 +1,28 @@
 [gd_scene format=3 uid="uid://cyshgyvntusxc"]
 
-[ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bs3a2n6inmvov" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dga3w2ehyndap" path="res://assets/player/hitman1_stand.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bcstws6dvwbmk" path="res://assets/player/hitman1_hold.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dbq7r3guj3y3l" path="res://assets/player/hitman1_gun.png" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(127, 130)
+size = Vector2(83, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(133.75, 131)
+size = Vector2(67, 166)
 
 [node name="Player" type="CharacterBody2D" unique_id=1287792069 groups=["player"]]
 script = ExtResource("1_g2els")
+sprite_idle = ExtResource("2_dqkch")
+sprite_walk = ExtResource("2_g2els")
+sprite_equipped = ExtResource("4_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=835406601]
-texture = ExtResource("1_3vyb7")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990140034]
-position = Vector2(-0.5, 0)
+position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="AimRayCast" type="RayCast2D" parent="." unique_id=776058415]
@@ -27,7 +33,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=744042015]
-position = Vector2(130.125, -0.5)
+position = Vector2(77.5, 0)
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1575183668]

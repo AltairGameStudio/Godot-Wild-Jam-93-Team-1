@@ -8,6 +8,12 @@ const SPEED_UNEQUIPPED = 400.0
 @onready var tracer_line = $TracerLine
 @onready var heal_bar = $HealBar
 
+@onready var sprite_2d = $Sprite2D 
+
+@export var sprite_idle: Texture2D
+@export var sprite_walk: Texture2D
+@export var sprite_equipped: Texture2D
+
 @export var max_health: int = 5
 var current_health: int = max_health
 # var current_health: int = 2
@@ -49,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	look_at(get_global_mouse_position())
+	update_sprite()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("equip"):
@@ -156,3 +163,11 @@ func complete_healing() -> void:
 	if GameManager.use_medkit():
 		current_health = min(current_health + 2, max_health)
 	stop_healing()
+
+func update_sprite() -> void:
+	if is_weapon_equipped:
+		sprite_2d.texture = sprite_equipped
+	elif velocity.length() > 0:
+		sprite_2d.texture = sprite_walk
+	else:
+		sprite_2d.texture = sprite_idle
