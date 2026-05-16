@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
 [ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
+[ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
 bg_color = Color(0.69411767, 0, 0, 1)
@@ -286,3 +287,6 @@ stretch_mode = 5
 
 [node name="CountLabel" type="Label" parent="MedkitStatus" unique_id=55929161]
 layout_mode = 2
+
+[node name="VictorySequence" parent="." unique_id=1905447250 instance=ExtResource("13_5n1hp")]
+visible = false

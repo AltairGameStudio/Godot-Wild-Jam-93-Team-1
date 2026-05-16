@@ -30,7 +30,6 @@ func _ready():
 func play_intro():
 	# Toca o som do telefone e espera ele terminar
 	audio_player.play()
-	print("oi1")
 	
 	# Aguarda até que o áudio termine de tocar
 	await audio_player.finished
@@ -38,7 +37,7 @@ func play_intro():
 	
 	# Tempo de espera entre cada letra
 	var typing_speed = 0.03
-	print("oi1")
+
 	for sentence in story_lines:
 		story_label.text = sentence
 		# Começa com 0 letras visíveis

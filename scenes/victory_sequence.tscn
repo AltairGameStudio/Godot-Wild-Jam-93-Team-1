@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://by1dtdp7u74jk"]
+[gd_scene format=3 uid="uid://c80muikrdyo2v"]
 
-[ext_resource type="Script" uid="uid://b13gogwmj7da8" path="res://scripts/intro_sequence.gd" id="1_eda3u"]
-[ext_resource type="AudioStream" uid="uid://bpd1r7ynjin0x" path="res://assets/sound/doorbell-old-tring.ogg" id="1_ilyg3"]
+[ext_resource type="Script" uid="uid://v4rfo57k01sd" path="res://scripts/victory_sequence.gd" id="1_yxng5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eda3u"]
 font_size = 32
@@ -9,14 +8,14 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_yle8u"]
 font_size = 24
 
-[node name="IntroSequence" type="Control" unique_id=1905447250]
+[node name="VictorySequence" type="Control" unique_id=1905447250]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eda3u")
+script = ExtResource("1_yxng5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1535533405]
 custom_minimum_size = Vector2(1800, 900)
@@ -24,9 +23,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1322273385]
-stream = ExtResource("1_ilyg3")
 
 [node name="Label" type="Label" parent="." unique_id=1729359137]
 custom_minimum_size = Vector2(200, 50)
@@ -46,11 +42,11 @@ label_settings = SubResource("LabelSettings_eda3u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=1806175992]
+[node name="Label2" type="Label" parent="." unique_id=648799251]
 layout_mode = 0
-offset_left = 1508.0
-offset_top = 828.0
-offset_right = 1748.0
-offset_bottom = 862.0
+offset_left = 1520.0
+offset_top = 836.0
+offset_right = 1760.0
+offset_bottom = 870.0
 text = "Press any key to skip"
 label_settings = SubResource("LabelSettings_yle8u")

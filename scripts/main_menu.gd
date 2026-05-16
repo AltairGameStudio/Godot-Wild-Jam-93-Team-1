@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	get_tree().paused = false
+
 func _on_play_button_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/intro_sequence.tscn")
 

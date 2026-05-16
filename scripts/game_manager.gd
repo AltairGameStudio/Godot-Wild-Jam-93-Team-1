@@ -11,6 +11,8 @@ var audio_player: AudioStreamPlayer
 var ticking_sfx = load("res://assets/sfx/clock ticking.mp3")
 var has_played_ticking_sfx: bool = false
 
+var victory_screen_shown: bool = false
+
 func _ready() -> void:
 	time_remaining = total_time
 	audio_player = AudioStreamPlayer.new()
@@ -33,6 +35,7 @@ func _process(delta: float) -> void:
 		end_game("O seu tempo acabou.")
 
 func start_game() -> void:
+	victory_screen_shown = false
 	time_remaining = total_time
 	points = 0
 	is_game_over = false
@@ -47,9 +50,25 @@ func end_game(reason: String) -> void:
 	get_tree().paused = true
 
 func win_game() -> void:
-	points += int(time_remaining) * 5  # Bônus por tempo restante
-	is_game_over = true
-	$/root/World/HUD/VictoryScreen/ScoreLabel.text = "Pontos: " + str(points)
+	if is_game_over: return
+	
+	is_game_over = true 
+	
+	var victory_sequence = get_tree().current_scene.find_child("VictorySequence", true, false)
+	
+	if victory_sequence:
+		victory_sequence.play_cutscene()
+	else:
+		print("ERRO: O Godot não achou o VictorySequence na cena!")
+		show_victory_screen()
+
+func show_victory_screen() -> void:
+	if victory_screen_shown: return
+	victory_screen_shown = true
+	
+	points += int(time_remaining)  # Bônus por tempo restante
+	
+	$/root/World/HUD/VictoryScreen/ScoreLabel.text = "Bounty: " + str(points)
 	$/root/World/HUD/VictoryScreen.fade_in()
 	
 	get_tree().paused = true
