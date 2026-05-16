@@ -759,7 +759,7 @@ item_icon = ExtResource("11_kpybi")
 
 [node name="SledgehammerHead" parent="CollectableItems" unique_id=2120967012 instance=ExtResource("6_i7141")]
 position = Vector2(1637, -2783)
-item_id = "sledgehammer_head"
+item_id = "sledgehammer head"
 item_icon = ExtResource("12_7iits")
 
 [node name="Badge" parent="CollectableItems" unique_id=1347412765 instance=ExtResource("6_i7141")]
@@ -774,12 +774,12 @@ item_icon = ExtResource("13_xgqkh")
 
 [node name="PocketKnife" parent="CollectableItems" unique_id=1746113607 instance=ExtResource("6_i7141")]
 position = Vector2(2412, 4152)
-item_id = "pocket_knife"
+item_id = "pocket knife"
 item_icon = ExtResource("14_munwf")
 
 [node name="FloppyDisk" parent="CollectableItems" unique_id=79652840 instance=ExtResource("6_i7141")]
 position = Vector2(-4593, 3939)
-item_id = "floppy_disk"
+item_id = "floppy disk"
 item_icon = ExtResource("15_ts3gi")
 
 [node name="Key" parent="CollectableItems" unique_id=146068009 instance=ExtResource("6_i7141")]
@@ -823,7 +823,7 @@ success_text = "The door unlocks and opens."
 [node name="GlassDoor" parent="Obstacles" unique_id=2074855931 instance=ExtResource("5_71j4m")]
 position = Vector2(3875, -4185)
 rotation = 1.5707964
-required_item = "sledgehammer_head"
+required_item = "sledgehammer head"
 interaction_text = "A glass door is blocking me. I could throw something heavy to break it."
 success_text = "The glass shatters everywhere. Now I can pass."
 
@@ -870,13 +870,13 @@ success_text = "I drop the heavy book on the plate. The door stays open."
 [node name="Terminal" parent="Obstacles" unique_id=2030729326 instance=ExtResource("5_71j4m")]
 position = Vector2(-2848, 800)
 rotation = 1.5707964
-required_item = "floppy_disk"
+required_item = "floppy disk"
 interaction_text = "This old computer controls the gate. It has a slot for an old, square disk."
 success_text = "The computer makes some noise, then says 'ACCESS GRANTED'. The gate opens."
 
 [node name="Canvas" parent="Obstacles" unique_id=1538920903 instance=ExtResource("5_71j4m")]
 position = Vector2(-4638, -222)
-required_item = "pocket_knife"
+required_item = "pocket knife"
 interaction_text = "A thick tarp is blocking the passage. A small, sharp blade would cut through it easily."
 success_text = "I slice open the tarp and step through."
 
