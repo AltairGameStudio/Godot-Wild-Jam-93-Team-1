@@ -81,5 +81,5 @@ func end_cutscene() -> void:
 
 func _input(event: InputEvent) -> void:
 	# Permite pular a cutscene
-	if visible and event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
+	if visible and (event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel")):
 		end_cutscene()
