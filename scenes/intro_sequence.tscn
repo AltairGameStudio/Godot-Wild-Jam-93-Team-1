@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b13gogwmj7da8" path="res://scripts/intro_sequence.gd" id="1_eda3u"]
 [ext_resource type="AudioStream" uid="uid://bpd1r7ynjin0x" path="res://assets/sound/doorbell-old-tring.ogg" id="1_ilyg3"]
+[ext_resource type="AudioStream" uid="uid://lvfrxjpxfrvq" path="res://assets/sound/generated-005_fast.wav" id="3_yle8u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eda3u"]
 font_size = 32
@@ -27,7 +28,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1322273385]
 stream = ExtResource("1_ilyg3")
-volume_db = -10.0
+volume_db = -25.0
 bus = &"SFX"
 
 [node name="Label" type="Label" parent="." unique_id=1729359137]
@@ -63,3 +64,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Press any key to skip"
 label_settings = SubResource("LabelSettings_yle8u")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1461817835]
+stream = ExtResource("3_yle8u")
+bus = &"SFX"

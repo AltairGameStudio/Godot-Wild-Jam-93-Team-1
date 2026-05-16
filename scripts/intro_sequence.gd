@@ -1,6 +1,7 @@
 extends Control
 
 @onready var audio_player = $AudioStreamPlayer
+@onready var typing_audio = $AudioStreamPlayer2
 @onready var story_label = $Label
 
 var game_scene = load("res://scenes/world.tscn")
@@ -19,7 +20,7 @@ var story_lines = [
 	"If you walk up with your gun down, they will attack...",
 	"...and you will have to kill them. I don't want that.",
 	"Their heavy backup is already on the way.",
-	"The moment you break the front door, you have exactly 10 minutes.",
+	"The moment you break the front door, you have exactly 20 minutes.",
 	"Get the guys, get the info, and get out fast."
 ]
 
@@ -46,11 +47,15 @@ func play_intro():
 		# Começa com 0 letras visíveis
 		story_label.visible_characters = 0
 		
+		typing_audio.play()
+		
 		# Revela uma letra por vez
 		for i in range(story_label.get_total_character_count()):
 			story_label.visible_characters += 1
 			await get_tree().create_timer(typing_speed).timeout
-			
+		
+		typing_audio.stop()
+		
 		await get_tree().create_timer(2.5).timeout
 		
 		# Limpa a tela para a próxima frase

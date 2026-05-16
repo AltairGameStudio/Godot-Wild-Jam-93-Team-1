@@ -7,6 +7,8 @@ extends StaticBody2D
 @export_multiline var success_text: String = "..."
 @export_multiline var wrong_item_text: String = "This doesn't seem to work here..."
 
+@onready var unlocked_sound = $AudioStreamPlayer2D
+
 # Interação para dar dicas ao jogador
 func on_interact() -> void:
 	$/root/World/HUD/DialogBox.display_text(interaction_text, false)
@@ -14,7 +16,8 @@ func on_interact() -> void:
 func on_item_used(used_item_id: String) -> bool:
 	if used_item_id == required_item:
 		$/root/World/HUD/DialogBox.display_text(success_text, false)
-		# Destrói a cerca de arame
+		unlocked_sound.play()
+		# Destrói o obstáculo
 		queue_free()
 		# Retorna verdadeiro para que o inventário saiba que o item foi gasto
 		return true

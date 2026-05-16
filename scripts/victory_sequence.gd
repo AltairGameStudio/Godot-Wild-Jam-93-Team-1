@@ -1,6 +1,7 @@
 extends Control
 
 @onready var story_label = $Label
+@onready var typing_sound = $AudioStreamPlayer2
 
 var cutscene_ended: bool = false
 var story_lines = []
@@ -58,11 +59,15 @@ func play_cutscene() -> void:
 		story_label.text = sentence
 		story_label.visible_characters = 0
 		
+		typing_sound.play()
+		
 		for i in range(story_label.get_total_character_count()):
 			if cutscene_ended: return
 			
 			story_label.visible_characters += 1
 			await get_tree().create_timer(typing_speed).timeout
+			
+		typing_sound.stop()
 			
 		if cutscene_ended: return
 		await get_tree().create_timer(2.5).timeout

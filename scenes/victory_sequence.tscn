@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c80muikrdyo2v"]
 
 [ext_resource type="Script" uid="uid://v4rfo57k01sd" path="res://scripts/victory_sequence.gd" id="1_yxng5"]
+[ext_resource type="AudioStream" uid="uid://lvfrxjpxfrvq" path="res://assets/sound/generated-005_fast.wav" id="2_yxng5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eda3u"]
 font_size = 32
@@ -57,3 +58,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Press any key to skip"
 label_settings = SubResource("LabelSettings_yle8u")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=2113105489]
+stream = ExtResource("2_yxng5")
+bus = &"SFX"
