@@ -107,6 +107,8 @@ func _physics_process(delta: float) -> void:
 	update_sprite()
 
 func decide_initial_reaction() -> void:
+	MusicManager.play_detection_music()
+	
 	if not player.is_weapon_equipped:
 		$SFX/Surprise.play()
 		# Culpa do player por andar desarmado
@@ -227,6 +229,8 @@ func arrest() -> void:
 
 func remove_from_scene() -> void:
 	queue_free()
+	print("oi rfs")
+	MusicManager.play_exploration_music()
 	if get_parent().get_child_count() <= 1:
 		GameManager.win_game()
 

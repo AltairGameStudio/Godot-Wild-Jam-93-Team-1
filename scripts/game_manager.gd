@@ -40,6 +40,7 @@ func start_game() -> void:
 	points = 0
 	is_game_over = false
 	get_tree().paused = false
+	MusicManager.play_exploration_music()
 
 func end_game(reason: String) -> void:
 	is_game_over = true

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpv56odra81ku"]
+
+[ext_resource type="Script" uid="uid://bipd6bvjnlhs5" path="res://scripts/music_manager.gd" id="1_tn5dr"]
+[ext_resource type="AudioStream" uid="uid://cd4yoaqx30qqm" path="res://assets/music/criminals close in.wav" id="2_jd6i5"]
+[ext_resource type="AudioStream" uid="uid://dkt52nk0pclvt" path="res://assets/music/Searching.wav" id="3_yodp2"]
+
+[node name="MusicManager" type="Node" unique_id=1759829548]
+script = ExtResource("1_tn5dr")
+
+[node name="DetectionMusic" type="AudioStreamPlayer" parent="." unique_id=938037844]
+process_mode = 3
+stream = ExtResource("2_jd6i5")
+bus = &"Music"
+
+[node name="ExplorationMusic" type="AudioStreamPlayer" parent="." unique_id=573675924]
+process_mode = 3
+stream = ExtResource("3_yodp2")
+bus = &"Music"

@@ -4,6 +4,7 @@ extends Control
 @onready var story_label = $Label
 
 var game_scene = load("res://scenes/world.tscn")
+var is_starting_game: bool = false
 
 var story_lines = [
 	"You are the best bounty hunter around. Prove it.",
@@ -28,6 +29,8 @@ func _ready():
 	play_intro()
 
 func play_intro():
+	MusicManager.stop_all_music()
+	
 	# Toca o som do telefone e espera ele terminar
 	audio_player.play()
 	
@@ -58,6 +61,9 @@ func play_intro():
 	start_game()
 
 func start_game():
+	if is_starting_game: return
+	is_starting_game = true
+	
 	GameManager.start_game()
 	SceneTransition.change_scene("res://scenes/world.tscn")
 

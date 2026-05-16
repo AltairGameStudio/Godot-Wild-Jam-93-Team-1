@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	get_tree().paused = false
+	MusicManager.play_detection_music()
 
 func _on_play_button_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/intro_sequence.tscn")

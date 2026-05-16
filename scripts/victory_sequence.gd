@@ -32,6 +32,8 @@ func _ready() -> void:
 	story_label.text = ""
 
 func play_cutscene() -> void:
+	MusicManager.stop_all_music()
+	
 	visible = true
 	
 	# Pausa o jogo
@@ -77,6 +79,7 @@ func end_cutscene() -> void:
 	cutscene_ended = true
 	
 	visible = false
+	MusicManager.play_detection_music()
 	GameManager.show_victory_screen()
 
 func _input(event: InputEvent) -> void:

@@ -27,6 +27,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1322273385]
 stream = ExtResource("1_ilyg3")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="Label" type="Label" parent="." unique_id=1729359137]
