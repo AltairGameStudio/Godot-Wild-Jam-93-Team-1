@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cyshgyvntusxc" path="res://scenes/player.tscn" id="2_k0juu"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="3_4wyf3"]
-[ext_resource type="Texture2D" uid="uid://chl8dx600a0sc" path="res://assets/cone_e_blur_noise_transparent.png" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://nlsesjyanxap" path="res://scenes/hud.tscn" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://bkbgb7aewgtd2" path="res://assets/cone_e_blur_noise_transparent.png" id="4_rga7q"]
 [ext_resource type="PackedScene" uid="uid://cf5v600qr0lhc" path="res://scenes/obstacle.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://bpv7muu0vg36d" path="res://assets/map/tilesheet_complete.png" id="5_rga7q"]
 [ext_resource type="PackedScene" uid="uid://bpdjs6e5pu01t" path="res://scenes/collectable_item.tscn" id="6_i7141"]
@@ -657,7 +657,7 @@ texture_scale = 5.0
 
 [node name="Lantern" type="PointLight2D" parent="Player" unique_id=1718092124]
 rotation = 1.5707964
-texture = ExtResource("4_7r4gi")
+texture = ExtResource("4_rga7q")
 offset = Vector2(0, -640)
 texture_scale = 2.5
 
