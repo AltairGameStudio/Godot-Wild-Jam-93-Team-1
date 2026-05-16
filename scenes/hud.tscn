@@ -13,9 +13,16 @@
 [ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
 [ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
+[ext_resource type="Script" uid="uid://7ecgjbk4muo" path="res://scripts/controls_screen.gd" id="14_eld54"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
 bg_color = Color(0.69411767, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5n1hp"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_eld54"]
+font_size = 20
 
 [node name="HUD" type="CanvasLayer" unique_id=1311239376]
 layer = 10
@@ -290,3 +297,71 @@ layout_mode = 2
 
 [node name="VictorySequence" parent="." unique_id=1905447250 instance=ExtResource("13_5n1hp")]
 visible = false
+
+[node name="ControlsScreen" type="Control" parent="." unique_id=821223738]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_eld54")
+
+[node name="ColorRect" type="ColorRect" parent="ControlsScreen" unique_id=1357722056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -274.0
+offset_right = 434.5
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3019608)
+
+[node name="Label" type="Label" parent="ControlsScreen/ColorRect" unique_id=1289498311]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.5
+offset_top = 40.0
+offset_right = 90.5
+offset_bottom = 107.0
+grow_horizontal = 2
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_5n1hp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ControlsScreen/ColorRect" unique_id=395462980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.75
+offset_top = -154.0
+offset_right = 350.75
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Collect items around the map to unlock obstacles.
+When approaching an enemy, keep your weapon equipped 
+and try to close the distance to capture them.
+Kill/capture all enemies to win.
+
+Movement: WASD
+Collect items and interact with obstacles: Spacebar
+Use items: Drag with the LMB towards the obstacle
+Equip weapon: RMB
+Shoot: LMB
+Capture enemies: Spacebar (when close to them)
+Use medkit: Hold down the E key"
+label_settings = SubResource("LabelSettings_eld54")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://2gsw8dx3io4q"]
 
+[ext_resource type="Script" uid="uid://1jpw3qqatlbi" path="res://scripts/world.gd" id="1_rga7q"]
 [ext_resource type="PackedScene" uid="uid://cyshgyvntusxc" path="res://scenes/player.tscn" id="2_k0juu"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://nlsesjyanxap" path="res://scenes/hud.tscn" id="4_k0juu"]
@@ -633,6 +634,7 @@ sources/1 = SubResource("TileSetAtlasSource_6oujy")
 shader = ExtResource("8_4mrxx")
 
 [node name="World" type="Node2D" unique_id=809886004]
+script = ExtResource("1_rga7q")
 metadata/_edit_horizontal_guides_ = [-3499.0]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1653250332]
