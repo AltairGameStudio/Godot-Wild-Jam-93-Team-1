@@ -1,7 +1,7 @@
 extends Node
 
 # Tempo até o jogo acabar
-var total_time: float = 120.0
+var total_time: float = 600.0
 var time_remaining: float
 var points: int = 0
 var is_game_over: bool = true
