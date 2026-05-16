@@ -5,6 +5,10 @@ extends Node2D
 @export var item_icon: Texture2D
 
 @onready var sprite_2d = $Sprite2D
+@onready var sfx_player = $PickupSFX
+
+var item_sfx = load("res://assets/sfx/click.mp3")
+var medkit_sfx = load("res://assets/sfx/zipper.mp3")
 
 func _ready() -> void:
 	if item_icon and sprite_2d:
@@ -12,6 +16,8 @@ func _ready() -> void:
 
 func on_interact() -> void:
 	if is_medkit:
+		play_sfx(medkit_sfx)
+
 		$/root/World/HUD/DialogBox.display_text("You picked up: " + item_id, false)
 		GameManager.add_medkit(1)
 		queue_free()
@@ -20,6 +26,7 @@ func on_interact() -> void:
 		var inventories = get_tree().get_nodes_in_group("inventory")
 		
 		if inventories.size() > 0:
+			play_sfx(item_sfx)
 			var inventory = inventories[0]
 			
 			# Tenta adicionar o item
@@ -31,3 +38,12 @@ func on_interact() -> void:
 				queue_free()
 		else:
 			print("Erro: Inventário não encontrado na cena!")
+
+func play_sfx(stream: AudioStream) -> void:
+	# Play SFX and remove it after it finishes
+	sfx_player.stream = stream
+	sfx_player.play()
+	sfx_player.finished.connect(sfx_player.queue_free)
+	# Remove child before queue_free to allow sound to finish
+	remove_child(sfx_player)
+	$/root/World/Player.add_child(sfx_player)

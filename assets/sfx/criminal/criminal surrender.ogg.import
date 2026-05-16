@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhwdul44onkc4"
+path="res://.godot/imported/criminal surrender.ogg-f383976177df61083c97e61e4b0eaefc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/criminal/criminal surrender.ogg"
+dest_files=["res://.godot/imported/criminal surrender.ogg-f383976177df61083c97e61e4b0eaefc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

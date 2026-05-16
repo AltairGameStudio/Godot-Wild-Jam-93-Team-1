@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnadoirnbjqer"
+path="res://.godot/imported/clock ticking.mp3-b870504d156b9f9808560eee644add40.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/clock ticking.mp3"
+dest_files=["res://.godot/imported/clock ticking.mp3-b870504d156b9f9808560eee644add40.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

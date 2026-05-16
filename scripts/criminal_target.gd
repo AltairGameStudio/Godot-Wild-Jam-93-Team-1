@@ -36,6 +36,14 @@ var shoot_timer: Timer
 @export var sprite_hostile: Texture2D
 @export var bullet_scene: PackedScene
 
+var gunshot_sfx_resources: Array[AudioStream] = [
+	load("res://assets/sfx/gunshots/gunshot1.ogg"),
+	load("res://assets/sfx/gunshots/gunshot2.mp3"),
+	load("res://assets/sfx/gunshots/gunshot3.ogg"),
+	load("res://assets/sfx/gunshots/gunshot4.ogg"),
+	load("res://assets/sfx/gunshots/gunshot5.mp3"),
+]
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	betray_distance = randf_range(150.0, detection_radius * 0.8)
@@ -79,6 +87,7 @@ func _physics_process(delta: float) -> void:
 				kill_classification = KillType.ILLEGITIMATE
 				enter_hostile_state()
 			elif will_betray and distance <= betray_distance:
+				$SFX/Betrayal.play()
 				# Legítima defesa
 				kill_classification = KillType.LEGITIMATE
 				enter_hostile_state()
@@ -97,16 +106,19 @@ func _physics_process(delta: float) -> void:
 
 func decide_initial_reaction() -> void:
 	if not player.is_weapon_equipped:
+		$SFX/Surprise.play()
 		# Culpa do player por andar desarmado
 		kill_classification = KillType.ILLEGITIMATE
 		enter_hostile_state()
 	elif randf() <= surrender_chance:
 		enter_surrender_state()
 	else:
+		$SFX/Surprise.play()
 		kill_classification = KillType.LEGITIMATE
 		enter_hostile_state()
 
 func enter_surrender_state() -> void:
+	$SFX/Surrender.play()
 	if current_state == State.SURRENDERING: return
 	current_state = State.SURRENDERING
 	if randf() <= betray_chance:
@@ -132,6 +144,8 @@ func _on_shoot_timer_timeout() -> void:
 	start_shoot_cooldown()
 
 func shoot_at_player() -> void:
+	$SFX/Gunshots.stream = gunshot_sfx_resources[randi() % gunshot_sfx_resources.size()]
+	$SFX/Gunshots.play()
 	if bullet_scene:
 		# Cria a cópia da bala
 		var bullet = bullet_scene.instantiate()
@@ -155,6 +169,7 @@ func _on_movement_timer_timeout() -> void:
 	movement_timer.wait_time = randf_range(0.5, 1.5)
 
 func take_damage(amount: int) -> void:
+	# $SFX/Damage.play()
 	health -= amount
 	print("Criminoso levou tiro! Vida: ", health)
 	
@@ -167,6 +182,14 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die() -> void:
+	# Play SFX and remove it after it finishes
+	var death_sfx = $SFX/Death
+	death_sfx.play()
+	death_sfx.finished.connect(death_sfx.queue_free)
+	# Remove child before queue_free to allow sound to finish
+	$SFX.remove_child(death_sfx)
+	player.add_child(death_sfx)
+
 	if kill_classification == KillType.LEGITIMATE:
 		$/root/World/HUD/DialogBox.display_text("Legitimate kill: +" + str(legitimate_kill_points), false)
 		GameManager.update_points(legitimate_kill_points)
@@ -186,6 +209,14 @@ func on_interact() -> void:
 	#	$/root/World/HUD/DialogBox.display_text("O suspeito ainda não foi confrontado.")
 
 func arrest() -> void:
+	# Play SFX and remove it after it finishes
+	var cuff_sfx = $SFX/Cuff
+	cuff_sfx.play()
+	cuff_sfx.finished.connect(cuff_sfx.queue_free)
+	# Remove child before queue_free to allow sound to finish
+	$SFX.remove_child(cuff_sfx)
+	player.add_child(cuff_sfx)
+
 	$/root/World/HUD/DialogBox.display_text("Arrest: +" + str(capture_points), false)
 	GameManager.update_points(capture_points)
 	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dodoai0wkuq6g"
+path="res://.godot/imported/healing complete.ogg-a5a7ce4f44f520bae415d2fefea4e851.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/healing/healing complete.ogg"
+dest_files=["res://.godot/imported/healing complete.ogg-a5a7ce4f44f520bae415d2fefea4e851.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

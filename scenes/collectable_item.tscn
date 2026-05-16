@@ -23,3 +23,6 @@ texture = ExtResource("2_yg184")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=679823771]
 shape = SubResource("RectangleShape2D_t8v6b")
+
+[node name="PickupSFX" type="AudioStreamPlayer2D" parent="." unique_id=673748000]
+bus = &"SFX"

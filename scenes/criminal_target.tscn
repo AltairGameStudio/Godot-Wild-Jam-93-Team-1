@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://c51o3o2ev2vj4" path="res://scripts/criminal_target.gd" id="1_t718d"]
 [ext_resource type="PackedScene" uid="uid://fmpm61f7hrgp" path="res://scenes/bullet.tscn" id="2_cx3cy"]
 [ext_resource type="Texture2D" uid="uid://c684x3igmyun6" path="res://assets/enemies/model2/manBlue_hold.png" id="3_cx3cy"]
+[ext_resource type="AudioStream" uid="uid://dd2hqyhp2jv0b" path="res://assets/sfx/criminal/criminal betrayal.ogg" id="4_g2o2j"]
+[ext_resource type="AudioStream" uid="uid://c1aiob10peqvl" path="res://assets/sfx/criminal/criminal surprise.ogg" id="5_2twhn"]
+[ext_resource type="AudioStream" uid="uid://dhwdul44onkc4" path="res://assets/sfx/criminal/criminal surrender.ogg" id="6_0p0px"]
+[ext_resource type="AudioStream" uid="uid://b333rltxw0gnk" path="res://assets/sfx/criminal/Cuff Dubai.mp3" id="7_2twhn"]
+[ext_resource type="AudioStream" uid="uid://0laa8el63xs2" path="res://assets/sfx/death grunt.mp3" id="8_0p0px"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t718d"]
 light_mode = 2
@@ -31,3 +36,28 @@ target_position = Vector2(800, 0)
 visible = false
 width = 2.0
 default_color = Color(1, 1, 0.47843137, 1)
+
+[node name="SFX" type="Node2D" parent="." unique_id=876883884]
+
+[node name="Betrayal" type="AudioStreamPlayer2D" parent="SFX" unique_id=92123719]
+stream = ExtResource("4_g2o2j")
+bus = &"SFX"
+
+[node name="Surprise" type="AudioStreamPlayer2D" parent="SFX" unique_id=1659872680]
+stream = ExtResource("5_2twhn")
+bus = &"SFX"
+
+[node name="Surrender" type="AudioStreamPlayer2D" parent="SFX" unique_id=1047721558]
+stream = ExtResource("6_0p0px")
+bus = &"SFX"
+
+[node name="Gunshots" type="AudioStreamPlayer2D" parent="SFX" unique_id=1646085683]
+bus = &"SFX"
+
+[node name="Cuff" type="AudioStreamPlayer2D" parent="SFX" unique_id=2013016303]
+stream = ExtResource("7_2twhn")
+bus = &"SFX"
+
+[node name="Death" type="AudioStreamPlayer2D" parent="SFX" unique_id=211374344]
+stream = ExtResource("8_0p0px")
+bus = &"SFX"

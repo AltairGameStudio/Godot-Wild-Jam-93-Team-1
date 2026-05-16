@@ -7,8 +7,15 @@ var points: int = 0
 var is_game_over: bool = true
 var medkit_count: int = 0
 
+var audio_player: AudioStreamPlayer
+var ticking_sfx = load("res://assets/sfx/clock ticking.mp3")
+var has_played_ticking_sfx: bool = false
+
 func _ready() -> void:
 	time_remaining = total_time
+	audio_player = AudioStreamPlayer.new()
+	audio_player.stream = ticking_sfx
+	add_child(audio_player)
 
 func _process(delta: float) -> void:
 	if is_game_over:
@@ -16,6 +23,10 @@ func _process(delta: float) -> void:
 		
 	# Reduz o tempo frame a frame
 	time_remaining -= delta
+
+	if time_remaining <= 15.0 and not has_played_ticking_sfx:
+		has_played_ticking_sfx = true
+		audio_player.play()
 	
 	if time_remaining <= 0.0:
 		time_remaining = 0.0

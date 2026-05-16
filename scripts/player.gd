@@ -31,6 +31,16 @@ var is_weapon_equipped: bool = false
 var current_heal_time: float = 0.0
 var is_healing: bool = false
 
+# Soundeffects
+var footstep_sfx_playing: bool = false
+var gunshot_sfx_resources: Array[AudioStream] = [
+	load("res://assets/sfx/gunshots/gunshot1.ogg"),
+	load("res://assets/sfx/gunshots/gunshot2.mp3"),
+	load("res://assets/sfx/gunshots/gunshot3.ogg"),
+	load("res://assets/sfx/gunshots/gunshot4.ogg"),
+	load("res://assets/sfx/gunshots/gunshot5.mp3"),
+]
+
 @export var bullet_scene: PackedScene
 
 func _physics_process(delta: float) -> void:
@@ -52,8 +62,13 @@ func _physics_process(delta: float) -> void:
 	
 	if direction:
 		velocity = direction * current_speed
+		if not footstep_sfx_playing:
+			footstep_sfx_playing = true
+			$SFX/Footsteps.play()
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, current_speed)
+		footstep_sfx_playing = false
+		$SFX/Footsteps.stop()
 
 	move_and_slide()
 	aim_at_mouse()
@@ -62,6 +77,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("equip"):
 		is_weapon_equipped = !is_weapon_equipped
+		$SFX/Holster.play()
 		if is_weapon_equipped:
 			print("Arma empunhada.")
 		else:
@@ -87,6 +103,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func shoot() -> void:
 	# Trava a arma temporariamente
 	can_shoot = false
+
+	$SFX/Gunshots.stream = gunshot_sfx_resources[randi() % gunshot_sfx_resources.size()]
+	$SFX/Gunshots.play()
 	
 	if bullet_scene:
 		# Cria uma bala
@@ -130,12 +149,14 @@ func take_damage(amount: int) -> void:
 		GameManager.end_game("Você foi morto.")
 
 func start_healing() -> void:
+	$SFX/Healing/Start.play()
 	is_healing = true
 	current_heal_time = 0.0
 	heal_bar.visible = true
 	heal_bar.max_value = heal_time_required
 
 func stop_healing() -> void:
+	$SFX/Healing/Start.stop()
 	is_healing = false
 	current_heal_time = 0.0
 	heal_bar.visible = false
@@ -149,6 +170,7 @@ func process_healing(delta: float) -> void:
 
 func complete_healing() -> void:
 	if GameManager.use_medkit():
+		$SFX/Healing/Complete.play()
 		current_health = min(current_health + 2, max_health)
 	stop_healing()
 
