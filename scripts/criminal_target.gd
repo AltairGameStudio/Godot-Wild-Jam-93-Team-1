@@ -15,6 +15,8 @@ var kill_classification: KillType = KillType.LEGITIMATE
 @export var max_shoot_cooldown: float = 1.5
 @export var enemy_spread: float = 15.0
 
+@export var patrol_points: Array[Node2D] = []
+
 var player: Node2D
 var will_betray: bool = false
 var betray_distance: float = 0.0
@@ -68,7 +70,7 @@ func _physics_process(delta: float) -> void:
 
 	match current_state:
 		State.IDLE:
-			velocity = Vector2.ZERO
+			patrol()
 			if distance <= detection_radius and is_player_visible():
 				decide_initial_reaction()
 				
@@ -262,3 +264,17 @@ func update_sprite() -> void:
 		sprite_2d.texture = sprite_walk
 	else:
 		sprite_2d.texture = sprite_idle
+
+func patrol() -> void:
+	if patrol_points.size() == 0:
+		return
+	
+	var target_point = patrol_points[0]
+	var direction = (target_point.global_position - global_position).normalized()
+	velocity = direction * 120.0
+	move_and_slide()
+	
+	if global_position.distance_to(target_point.global_position) < 10.0:
+		# Move first point to the end of the list to create a loop
+		patrol_points.append(patrol_points.pop_front())
+		look_at(patrol_points[0].global_position)

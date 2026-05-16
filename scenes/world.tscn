@@ -672,65 +672,191 @@ tile_set = SubResource("TileSet_71j4m")
 
 [node name="Criminals" type="Node" parent="." unique_id=670724956]
 
-[node name="CriminalTarget" parent="Criminals" unique_id=429802876 instance=ExtResource("7_i7141")]
+[node name="CriminalTarget" parent="Criminals" unique_id=429802876 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(4396, -2613)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3"), NodePath("PatrolPoints/PatrolPoint4")]
 sprite_idle = ExtResource("7_munwf")
 sprite_walk = ExtResource("8_ts3gi")
 sprite_hostile = ExtResource("9_0nbtd")
 
-[node name="CriminalTarget4" parent="Criminals" unique_id=715505027 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget" unique_id=2063639808]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget/PatrolPoints" unique_id=565460368]
+position = Vector2(4786.6885, -2864.1084)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget/PatrolPoints" unique_id=1038933534]
+position = Vector2(4781.501, -2296.0786)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget/PatrolPoints" unique_id=295929054]
+position = Vector2(3884.066, -2259.766)
+
+[node name="PatrolPoint4" type="Node2D" parent="Criminals/CriminalTarget/PatrolPoints" unique_id=169457766]
+position = Vector2(3902.2222, -2840.7646)
+
+[node name="CriminalTarget4" parent="Criminals" unique_id=715505027 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(3151, -470)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3"), NodePath("PatrolPoints/PatrolPoint4")]
 sprite_idle = ExtResource("10_8u370")
 sprite_walk = ExtResource("11_rga7q")
 sprite_hostile = ExtResource("12_6oujy")
 
-[node name="CriminalTarget5" parent="Criminals" unique_id=101457500 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget4" unique_id=2108179472]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget4/PatrolPoints" unique_id=896663313]
+position = Vector2(3495, -805)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget4/PatrolPoints" unique_id=1497782887]
+position = Vector2(3495, 79)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget4/PatrolPoints" unique_id=95765702]
+position = Vector2(2740, 90)
+
+[node name="PatrolPoint4" type="Node2D" parent="Criminals/CriminalTarget4/PatrolPoints" unique_id=1653676409]
+position = Vector2(2740, -805)
+
+[node name="CriminalTarget5" parent="Criminals" unique_id=101457500 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(3844, 2524)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3")]
 sprite_idle = ExtResource("13_hi6a0")
 sprite_walk = ExtResource("14_eo1xk")
 sprite_hostile = ExtResource("15_18clu")
 
-[node name="CriminalTarget7" parent="Criminals" unique_id=1952222272 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget5" unique_id=1675788857]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget5/PatrolPoints" unique_id=714943832]
+position = Vector2(4421, 2347)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget5/PatrolPoints" unique_id=371368212]
+position = Vector2(3581, 3387)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget5/PatrolPoints" unique_id=421303933]
+position = Vector2(3640, 2417)
+
+[node name="CriminalTarget7" parent="Criminals" unique_id=1952222272 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(-4169, 2484)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3"), NodePath("PatrolPoints/PatrolPoint4")]
 sprite_idle = ExtResource("16_4wdv8")
 sprite_walk = ExtResource("17_d46x8")
 sprite_hostile = ExtResource("18_3l05q")
 
-[node name="CriminalTarget8" parent="Criminals" unique_id=217480014 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget7" unique_id=1620216580]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget7/PatrolPoints" unique_id=257813502]
+position = Vector2(-3976, 2393)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget7/PatrolPoints" unique_id=1178530018]
+position = Vector2(-3896, 3194)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget7/PatrolPoints" unique_id=1646625400]
+position = Vector2(-4805, 3263)
+
+[node name="PatrolPoint4" type="Node2D" parent="Criminals/CriminalTarget7/PatrolPoints" unique_id=443775683]
+position = Vector2(-4819, 2302)
+
+[node name="CriminalTarget8" parent="Criminals" unique_id=217480014 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(-978, 955)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3")]
 sprite_idle = ExtResource("19_x28ej")
 sprite_walk = ExtResource("20_1jxku")
 sprite_hostile = ExtResource("21_1dgkn")
 
-[node name="CriminalTarget9" parent="Criminals" unique_id=753181224 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget8" unique_id=1944141190]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget8/PatrolPoints" unique_id=469732633]
+position = Vector2(-715, 772)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget8/PatrolPoints" unique_id=689792814]
+position = Vector2(-681, 1106)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget8/PatrolPoints" unique_id=1469007834]
+position = Vector2(-1693, 924)
+
+[node name="CriminalTarget9" parent="Criminals" unique_id=753181224 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(-970, 112)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2")]
 sprite_idle = ExtResource("22_e68xj")
 sprite_walk = ExtResource("23_5hglh")
 sprite_hostile = ExtResource("24_qg546")
 
-[node name="CriminalTarget10" parent="Criminals" unique_id=754440311 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget9" unique_id=1701328942]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget9/PatrolPoints" unique_id=1362520996]
+position = Vector2(-815, 80)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget9/PatrolPoints" unique_id=1251904804]
+position = Vector2(-2489, 123)
+
+[node name="CriminalTarget10" parent="Criminals" unique_id=754440311 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(-954, -3465)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3"), NodePath("PatrolPoints/PatrolPoint4")]
 sprite_idle = ExtResource("7_munwf")
 sprite_walk = ExtResource("8_ts3gi")
 sprite_hostile = ExtResource("9_0nbtd")
 
-[node name="CriminalTarget6" parent="Criminals" unique_id=1975981900 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget10" unique_id=360834893]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget10/PatrolPoints" unique_id=930484310]
+position = Vector2(-732, -3670)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget10/PatrolPoints" unique_id=875888401]
+position = Vector2(-729, -2703)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget10/PatrolPoints" unique_id=151822412]
+position = Vector2(-1651, -3155)
+
+[node name="PatrolPoint4" type="Node2D" parent="Criminals/CriminalTarget10/PatrolPoints" unique_id=2127794652]
+position = Vector2(-1617, -3671)
+
+[node name="CriminalTarget6" parent="Criminals" unique_id=1975981900 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(4498, 3099)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3")]
 sprite_idle = ExtResource("10_8u370")
 sprite_walk = ExtResource("11_rga7q")
 sprite_hostile = ExtResource("12_6oujy")
 
-[node name="CriminalTarget2" parent="Criminals" unique_id=815589432 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget6" unique_id=1954249435]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget6/PatrolPoints" unique_id=1029963554]
+position = Vector2(4707, 2656)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget6/PatrolPoints" unique_id=456853340]
+position = Vector2(4755, 4177)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget6/PatrolPoints" unique_id=212956836]
+position = Vector2(4132, 3621)
+
+[node name="CriminalTarget2" parent="Criminals" unique_id=815589432 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(779, -5592)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2"), NodePath("PatrolPoints/PatrolPoint3")]
 sprite_idle = ExtResource("13_hi6a0")
 sprite_walk = ExtResource("14_eo1xk")
 sprite_hostile = ExtResource("15_18clu")
 
-[node name="CriminalTarget3" parent="Criminals" unique_id=916959591 instance=ExtResource("7_i7141")]
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget2" unique_id=2102546231]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget2/PatrolPoints" unique_id=1825313022]
+position = Vector2(1056, -5391)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget2/PatrolPoints" unique_id=211753537]
+position = Vector2(1036, -5878)
+
+[node name="PatrolPoint3" type="Node2D" parent="Criminals/CriminalTarget2/PatrolPoints" unique_id=327644155]
+position = Vector2(544, -5456)
+
+[node name="CriminalTarget3" parent="Criminals" unique_id=916959591 node_paths=PackedStringArray("patrol_points") instance=ExtResource("7_i7141")]
 position = Vector2(4589, -4349)
+patrol_points = [NodePath("PatrolPoints/PatrolPoint1"), NodePath("PatrolPoints/PatrolPoint2")]
 sprite_idle = ExtResource("22_e68xj")
 sprite_walk = ExtResource("23_5hglh")
 sprite_hostile = ExtResource("24_qg546")
+
+[node name="PatrolPoints" type="Node" parent="Criminals/CriminalTarget3" unique_id=446698035]
+
+[node name="PatrolPoint1" type="Node2D" parent="Criminals/CriminalTarget3/PatrolPoints" unique_id=1488833797]
+position = Vector2(4776, -4526)
+
+[node name="PatrolPoint2" type="Node2D" parent="Criminals/CriminalTarget3/PatrolPoints" unique_id=1197288140]
+position = Vector2(4793, -4105)
 
 [node name="CollectableItems" type="Node" parent="." unique_id=1501360921]
 
@@ -844,6 +970,7 @@ success_text = "The lock turns and the door opens."
 
 [node name="LiftingGate" parent="Obstacles" unique_id=1204693729 instance=ExtResource("5_71j4m")]
 position = Vector2(1572, 2083)
+rotation = 3.1415927
 required_item = "spatula"
 interaction_text = "This terminal is missing the lever. I need something flat and rigid to use as one."
 success_text = "I fit it into the lever position and activate the mechanism, opening the gate."
@@ -857,14 +984,14 @@ success_text = "The coin works, and I can push my way through."
 
 [node name="Chain" parent="Obstacles" unique_id=229721854 instance=ExtResource("5_71j4m")]
 position = Vector2(-479, 2333)
-rotation = 1.5707964
+rotation = 4.712389
 required_item = "acid"
 interaction_text = "A big chain locks this door. I need something to get rid of it."
 success_text = "The liquid burns through the metal. The chain drops to the floor."
 
 [node name="PressurePlate" parent="Obstacles" unique_id=67150944 instance=ExtResource("5_71j4m")]
 position = Vector2(-4126, 4069)
-rotation = 1.5707964
+rotation = 4.712389
 required_item = "book"
 interaction_text = "The door needs weight on that floor plate to stay open. I have to leave something heavy there."
 success_text = "I drop the heavy book on the plate. The door stays open."
@@ -878,6 +1005,7 @@ success_text = "The computer makes some noise, then says 'ACCESS GRANTED'. The g
 
 [node name="Canvas" parent="Obstacles" unique_id=1538920903 instance=ExtResource("5_71j4m")]
 position = Vector2(-4638, -222)
+rotation = 3.1415927
 required_item = "pocket knife"
 interaction_text = "A thick tarp is blocking the passage. A small, sharp blade would cut through it easily."
 success_text = "I slice open the tarp and step through."
