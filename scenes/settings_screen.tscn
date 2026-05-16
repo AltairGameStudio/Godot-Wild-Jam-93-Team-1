@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lepbs7dswgrj"]
 
 [ext_resource type="Script" uid="uid://dfn1lsb4inhte" path="res://scripts/settings_screen.gd" id="1_srqes"]
+[ext_resource type="AudioStream" uid="uid://bcypfm8fjy2xr" path="res://assets/sfx/click.mp3" id="2_assm4"]
 
 [node name="SettingsScreen" type="ColorRect" unique_id=758672754]
 anchors_preset = -1
@@ -26,7 +27,7 @@ theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 32
 columns = 2
 
-[node name="VFXLabel" type="Label" parent="GridContainer" unique_id=2039602798]
+[node name="SFXLabel" type="Label" parent="GridContainer" unique_id=2039602798]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Sound
@@ -34,10 +35,12 @@ effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VFXSlider" type="HSlider" parent="GridContainer" unique_id=32540723]
+[node name="SFXSlider" type="HSlider" parent="GridContainer" unique_id=32540723]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 2.0
+step = 0.001
 ticks_on_borders = true
 
 [node name="MusicLabel" type="Label" parent="GridContainer" unique_id=239025974]
@@ -51,6 +54,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 2.0
+step = 0.001
 ticks_on_borders = true
 
 [node name="SettingsBackButton" type="Button" parent="." unique_id=382880186]
@@ -69,4 +74,10 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Return"
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=752606285]
+stream = ExtResource("2_assm4")
+bus = &"SFX"
+
+[connection signal="drag_ended" from="GridContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
