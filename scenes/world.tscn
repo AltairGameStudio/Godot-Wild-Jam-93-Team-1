@@ -970,6 +970,7 @@ success_text = "The lock turns and the door opens."
 
 [node name="LiftingGate" parent="Obstacles" unique_id=1204693729 instance=ExtResource("5_71j4m")]
 position = Vector2(1572, 2083)
+rotation = 3.1415927
 required_item = "spatula"
 interaction_text = "This terminal is missing the lever. I need something flat and rigid to use as one."
 success_text = "I fit it into the lever position and activate the mechanism, opening the gate."
@@ -983,14 +984,14 @@ success_text = "The coin works, and I can push my way through."
 
 [node name="Chain" parent="Obstacles" unique_id=229721854 instance=ExtResource("5_71j4m")]
 position = Vector2(-479, 2333)
-rotation = 1.5707964
+rotation = 4.712389
 required_item = "acid"
 interaction_text = "A big chain locks this door. I need something to get rid of it."
 success_text = "The liquid burns through the metal. The chain drops to the floor."
 
 [node name="PressurePlate" parent="Obstacles" unique_id=67150944 instance=ExtResource("5_71j4m")]
 position = Vector2(-4126, 4069)
-rotation = 1.5707964
+rotation = 4.712389
 required_item = "book"
 interaction_text = "The door needs weight on that floor plate to stay open. I have to leave something heavy there."
 success_text = "I drop the heavy book on the plate. The door stays open."
@@ -1004,6 +1005,7 @@ success_text = "The computer makes some noise, then says 'ACCESS GRANTED'. The g
 
 [node name="Canvas" parent="Obstacles" unique_id=1538920903 instance=ExtResource("5_71j4m")]
 position = Vector2(-4638, -222)
+rotation = 3.1415927
 required_item = "pocket knife"
 interaction_text = "A thick tarp is blocking the passage. A small, sharp blade would cut through it easily."
 success_text = "I slice open the tarp and step through."
