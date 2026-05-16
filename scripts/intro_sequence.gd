@@ -60,9 +60,7 @@ func play_intro():
 
 func start_game():
 	GameManager.start_game()
-	var error = get_tree().change_scene_to_packed(game_scene)
-	if error != OK:
-		print("Erro ao carregar a cena do jogo: ", error)
+	SceneTransition.change_scene("res://scenes/world.tscn")
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
