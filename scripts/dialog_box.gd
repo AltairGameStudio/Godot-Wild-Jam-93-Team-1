@@ -14,6 +14,10 @@ func display_text(text: String, pauses_game: bool = true) -> void:
 	if needs_interaction and not pauses_game:
 		return # Se já está esperando interação, não mostra outro texto
 	$DialogLabel.text = text
+	# Muda largura para ser maior que a Label
+	size.x = $DialogLabel.get_minimum_size().x + 50
+	# Centraliza o DialogBox horizontalmente
+	position.x = (get_viewport_rect().size.x - size.x) / 2
 	dialog_box_visible = true
 	needs_interaction = pauses_game
 	var fade_in_time = 0.3
