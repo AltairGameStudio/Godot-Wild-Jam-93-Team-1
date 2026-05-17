@@ -241,7 +241,7 @@ horizontal_alignment = 2
 [node name="DialogBox" type="NinePatchRect" parent="." unique_id=389375939]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
-self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 1)
+self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 0.49803922)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
