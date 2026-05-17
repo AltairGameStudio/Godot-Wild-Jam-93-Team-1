@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
 [ext_resource type="PackedScene" uid="uid://bimjl21vj5gsa" path="res://scenes/victory_screen.tscn" id="7_hd3ao"]
 [ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
-[ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
+[ext_resource type="Script" uid="uid://h8irtaoqqeau" path="res://scripts/medkit_status.gd" id="11_apjy4"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
 [ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
 [ext_resource type="Script" uid="uid://7ecgjbk4muo" path="res://scripts/controls_screen.gd" id="14_eld54"]
@@ -371,6 +371,7 @@ patch_margin_left = 29
 patch_margin_top = 29
 patch_margin_right = 29
 patch_margin_bottom = 29
+axis_stretch_horizontal = 2
 
 [node name="Label" type="Label" parent="ControlsScreen/ColorRect" unique_id=1289498311]
 layout_mode = 1

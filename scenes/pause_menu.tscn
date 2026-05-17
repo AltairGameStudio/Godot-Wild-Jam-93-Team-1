@@ -49,6 +49,7 @@ patch_margin_left = 29
 patch_margin_top = 29
 patch_margin_right = 29
 patch_margin_bottom = 29
+axis_stretch_horizontal = 2
 
 [node name="PauseLabel" type="Label" parent="." unique_id=1701533708]
 layout_mode = 1
