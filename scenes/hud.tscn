@@ -17,6 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
 [ext_resource type="Script" uid="uid://7ecgjbk4muo" path="res://scripts/controls_screen.gd" id="14_eld54"]
 
+[sub_resource type="Theme" id="Theme_qkknv"]
+TooltipLabel/colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+TooltipLabel/font_sizes/font_size = 24
+TooltipLabel/fonts/font = ExtResource("4_qkknv")
+
 [sub_resource type="LabelSettings" id="LabelSettings_uxdf7"]
 font = ExtResource("4_qkknv")
 font_size = 40
@@ -34,6 +39,10 @@ font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
 bg_color = Color(0.69411767, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iypfu"]
+font = ExtResource("4_qkknv")
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_5n1hp"]
 font_size = 48
@@ -62,6 +71,7 @@ offset_top = -325.0
 offset_right = 90.0
 offset_bottom = 325.0
 grow_vertical = 2
+theme = SubResource("Theme_qkknv")
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InventoryScroll" unique_id=1159907153 groups=["inventory"]]
@@ -323,6 +333,7 @@ stretch_mode = 5
 
 [node name="CountLabel" type="Label" parent="MedkitStatus" unique_id=55929161]
 layout_mode = 2
+label_settings = SubResource("LabelSettings_iypfu")
 
 [node name="VictorySequence" parent="." unique_id=1905447250 instance=ExtResource("13_5n1hp")]
 visible = false
