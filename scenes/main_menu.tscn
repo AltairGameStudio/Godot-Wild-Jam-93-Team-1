@@ -48,6 +48,9 @@ modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
 texture = ExtResource("4_rtw2f")
 modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
+font_size = 40
+
 [node name="MainMenu" type="Control" unique_id=154347934]
 process_mode = 3
 layout_mode = 3
@@ -160,25 +163,101 @@ patch_margin_bottom = 29
 
 [node name="CreditsLabel" type="Label" parent="CreditsScreen" unique_id=609988665]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -149.0
-offset_top = -290.0
+offset_top = 70.0
 offset_right = 149.0
-offset_bottom = 115.0
+offset_bottom = 150.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_oa1go")
 theme_override_font_sizes/font_size = 64
-text = "Programming:
-Pedro Coterli
-Pedro Thomaz
+text = "Pedro Coterli"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-Sound Design:
-Nivadra"
+[node name="CreditsLabel5" type="Label" parent="CreditsScreen" unique_id=1430236842]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 14.0
+offset_right = 149.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Game Design"
+label_settings = SubResource("LabelSettings_rtw2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel3" type="Label" parent="CreditsScreen" unique_id=1251053216]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 206.0
+offset_right = 149.0
+offset_bottom = 339.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Pedro Coterli
+Pedro Thomaz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel6" type="Label" parent="CreditsScreen" unique_id=1852040940]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 145.0
+offset_right = 149.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Programming"
+label_settings = SubResource("LabelSettings_rtw2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel4" type="Label" parent="CreditsScreen" unique_id=1961518561]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 411.0
+offset_right = 149.0
+offset_bottom = 479.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Nivadra"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLabel7" type="Label" parent="CreditsScreen" unique_id=313884171]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 349.0
+offset_right = 149.0
+offset_bottom = 429.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Sound & Music Design"
+label_settings = SubResource("LabelSettings_rtw2f")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -189,15 +268,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -310.5
-offset_top = 90.0
-offset_right = 310.5
-offset_bottom = 223.0
+offset_left = -321.0
+offset_top = 107.0
+offset_right = 321.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_oa1go")
 theme_override_font_sizes/font_size = 32
-text = "Assets credits on our itch.io page"
+text = "Credits for the assets are on the game's page on Itch.io."
 horizontal_alignment = 1
 vertical_alignment = 1
 
