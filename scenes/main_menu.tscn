@@ -8,18 +8,43 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
 font_size = 64
+font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
 texture = ExtResource("4_rtw2f")
-modulate_color = Color(0.54509807, 0, 0, 0.827451)
+modulate_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flqon"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ln24"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
 texture = ExtResource("4_rtw2f")
-modulate_color = Color(0.54509807, 0, 0, 0.827451)
+modulate_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
 texture = ExtResource("4_rtw2f")
-modulate_color = Color(0.54509807, 0, 0, 0.827451)
+modulate_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
 
 [node name="MainMenu" type="Control" unique_id=154347934]
 process_mode = 3
@@ -39,7 +64,7 @@ texture = ExtResource("2_bqqt6")
 [node name="GameTitle" type="Node2D" parent="." unique_id=936749305]
 
 [node name="Sprite2D" type="Sprite2D" parent="GameTitle" unique_id=1266052718]
-modulate = Color(0.54509807, 0, 0, 0.7607843)
+modulate = Color(0.12941177, 0.16862746, 0.14901961, 0.9098039)
 position = Vector2(901, 276.5)
 scale = Vector2(1.3164063, 1.3437501)
 texture = ExtResource("3_8ln24")
@@ -80,8 +105,11 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=828509133]
 custom_minimum_size = Vector2(130, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_flqon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ln24")
 text = "Play"
 icon_alignment = 1
 expand_icon = true
@@ -89,15 +117,21 @@ expand_icon = true
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=761586223]
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rtw2f")
 text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=77075015]
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
 text = "Credits"
 
 [node name="SettingsScreen" parent="." unique_id=758672754 instance=ExtResource("2_ekxnf")]
