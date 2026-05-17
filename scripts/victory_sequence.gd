@@ -14,14 +14,14 @@ var story_lines_bad = [
 ]
 
 var story_lines_mid = [
-	"My extraction team is sweeping the building right now.",
+	"My men are sweeping the building right now.",
 	"You left a few bodies behind, but we got enough of them alive to make them talk.",
 	"It wasn't a pretty job, but I'll get the location of my goods out of them.",
 	"Here is your cut. Let's see your final numbers..."
 ]
 
 var story_lines_good = [
-	"My extraction team just secured the perimeter.",
+	"My interrogation squad just secured the perimeter.",
 	"A clean sweep. You bagged them alive, exactly as ordered. I am truly impressed.",
 	"They'll be screaming the exact location of my goods before the hour is up.",
 	"You earned every penny. Let's see the final numbers..."

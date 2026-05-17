@@ -10,7 +10,7 @@ var is_starting_game: bool = false
 var story_lines = [
 	"You are the best bounty hunter around. Prove it.",
 	"A rival gang is laying low in that building after hitting one of my spots.",
-	"They locked themselves deep inside, waiting for their extraction team.",
+	"They locked themselves deep inside, waiting for a secure transport to smuggle my goods out.",
 	"I need you to break in, but listen: I want them alive.",
 	"They know where my stolen goods are. Only shoot if you really have to.",
 	"The more guys you capture alive, the more money you make.",
