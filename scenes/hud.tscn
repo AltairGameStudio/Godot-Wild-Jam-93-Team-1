@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="1_oo0fn"]
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
 [ext_resource type="Script" uid="uid://bd8lnpyuh3kdf" path="res://scripts/time_label.gd" id="4_6fi6k"]
-[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="4_qkknv"]
 [ext_resource type="Script" uid="uid://j86o5lumxsmj" path="res://scripts/dialog_box.gd" id="5_uo2fv"]
 [ext_resource type="Texture2D" uid="uid://2bpeqmg010hd" path="res://assets/ui/scrollbar_future_grey.png" id="6_3swnk"]
 [ext_resource type="PackedScene" uid="uid://buuujl3ct1quy" path="res://scenes/game_over_screen.tscn" id="6_5pdws"]
@@ -12,7 +11,7 @@
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
 [ext_resource type="PackedScene" uid="uid://bimjl21vj5gsa" path="res://scenes/victory_screen.tscn" id="7_hd3ao"]
 [ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
-[ext_resource type="Script" uid="uid://h8irtaoqqeau" path="res://scripts/medkit_status.gd" id="11_apjy4"]
+[ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
 [ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
 [ext_resource type="Script" uid="uid://7ecgjbk4muo" path="res://scripts/controls_screen.gd" id="14_eld54"]
@@ -22,20 +21,20 @@
 [sub_resource type="Theme" id="Theme_qkknv"]
 TooltipLabel/colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 TooltipLabel/font_sizes/font_size = 24
-TooltipLabel/fonts/font = ExtResource("4_qkknv")
+TooltipLabel/fonts/font = ExtResource("17_5357l")
 
 [sub_resource type="LabelSettings" id="LabelSettings_uxdf7"]
-font = ExtResource("4_qkknv")
+font = ExtResource("17_5357l")
 font_size = 40
 font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5357l"]
-font = ExtResource("4_qkknv")
+font = ExtResource("17_5357l")
 font_size = 40
 font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qkknv"]
-font = ExtResource("4_qkknv")
+font = ExtResource("17_5357l")
 font_size = 35
 font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
@@ -43,7 +42,7 @@ font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 bg_color = Color(0.69411767, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_iypfu"]
-font = ExtResource("4_qkknv")
+font = ExtResource("17_5357l")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_5n1hp"]
