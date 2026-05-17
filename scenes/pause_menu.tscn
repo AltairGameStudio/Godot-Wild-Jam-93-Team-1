@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clshnwdsgaep7" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="2_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://cqbjf5fpotdh5" path="res://assets/ui/banner_modern.png" id="2_7l7mv"]
 [ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_kukqi"]
 [ext_resource type="Texture2D" uid="uid://cyw0e3khsmr6k" path="res://assets/ui/button_red.png" id="3_7l7mv"]
 
@@ -29,7 +30,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_myx47")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1682234798]
+[node name="ColorRect" type="NinePatchRect" parent="." unique_id=1039731166]
+self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
@@ -42,7 +44,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.8980392)
+texture = ExtResource("2_7l7mv")
+patch_margin_left = 29
+patch_margin_top = 29
+patch_margin_right = 29
+patch_margin_bottom = 29
 
 [node name="PauseLabel" type="Label" parent="." unique_id=1701533708]
 layout_mode = 1
