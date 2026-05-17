@@ -12,10 +12,12 @@
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
 [ext_resource type="PackedScene" uid="uid://bimjl21vj5gsa" path="res://scenes/victory_screen.tscn" id="7_hd3ao"]
 [ext_resource type="PackedScene" uid="uid://bgnlkgksr0r1a" path="res://scenes/pause_menu.tscn" id="8_hd3ao"]
-[ext_resource type="Script" uid="uid://c1rnp5516egf4" path="res://scripts/medkit_status.gd" id="11_apjy4"]
+[ext_resource type="Script" uid="uid://h8irtaoqqeau" path="res://scripts/medkit_status.gd" id="11_apjy4"]
 [ext_resource type="Texture2D" uid="uid://x6dq2g6vsl6c" path="res://assets/items/genericItem_color_102.png" id="12_5n1hp"]
 [ext_resource type="PackedScene" uid="uid://c80muikrdyo2v" path="res://scenes/victory_sequence.tscn" id="13_5n1hp"]
 [ext_resource type="Script" uid="uid://7ecgjbk4muo" path="res://scripts/controls_screen.gd" id="14_eld54"]
+[ext_resource type="Texture2D" uid="uid://cqbjf5fpotdh5" path="res://assets/ui/banner_modern.png" id="16_uxdf7"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="17_5357l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uxdf7"]
 font = ExtResource("4_qkknv")
@@ -36,10 +38,10 @@ font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 bg_color = Color(0.69411767, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5n1hp"]
-font_size = 48
+font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_eld54"]
-font_size = 20
+font_size = 28
 
 [node name="HUD" type="CanvasLayer" unique_id=1311239376]
 layer = 10
@@ -337,7 +339,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("14_eld54")
 
-[node name="ColorRect" type="ColorRect" parent="ControlsScreen" unique_id=1357722056]
+[node name="ColorRect" type="NinePatchRect" parent="ControlsScreen" unique_id=345935259]
+self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -350,7 +353,11 @@ offset_right = 434.5
 offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.3019608)
+texture = ExtResource("16_uxdf7")
+patch_margin_left = 29
+patch_margin_top = 29
+patch_margin_right = 29
+patch_margin_bottom = 29
 
 [node name="Label" type="Label" parent="ControlsScreen/ColorRect" unique_id=1289498311]
 layout_mode = 1
@@ -362,6 +369,7 @@ offset_top = 40.0
 offset_right = 90.5
 offset_bottom = 107.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("17_5357l")
 text = "Tutorial"
 label_settings = SubResource("LabelSettings_5n1hp")
 horizontal_alignment = 1
@@ -380,6 +388,7 @@ offset_right = 350.75
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("17_5357l")
 text = "Collect items around the map to unlock obstacles.
 When approaching an enemy, keep your weapon equipped 
 and try to close the distance to capture them.
