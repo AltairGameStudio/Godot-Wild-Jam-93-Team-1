@@ -4,10 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bm6infqvq1u6y" path="res://assets/ui/scifi_main_menu.jpg" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://cqbjf5fpotdh5" path="res://assets/ui/banner_modern.png" id="3_8ln24"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="4_oa1go"]
 [ext_resource type="Texture2D" uid="uid://cyw0e3khsmr6k" path="res://assets/ui/button_red.png" id="4_rtw2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
-font_size = 64
+font = ExtResource("4_oa1go")
+font_size = 85
 font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
@@ -106,7 +108,8 @@ alignment = 1
 custom_minimum_size = Vector2(130, 70)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_flqon")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8ln24")
@@ -118,7 +121,8 @@ expand_icon = true
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lgwnu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rtw2f")
@@ -128,7 +132,8 @@ text = "Settings"
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_5dd4i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
