@@ -7,6 +7,7 @@ enum KillType { LEGITIMATE, ILLEGITIMATE }
 var kill_classification: KillType = KillType.LEGITIMATE
 
 @export var detection_radius: float = 800.0
+@export var lose_aggro_radius: float = 1000.0
 @export var surrender_chance: float = 0.6
 @export var betray_chance: float = 0.4
 @export var health: int = 3
@@ -95,6 +96,18 @@ func _physics_process(delta: float) -> void:
 				enter_hostile_state()
 			
 		State.HOSTILE:
+			if player and global_position.distance_to(player.global_position) > lose_aggro_radius:
+				current_state = State.IDLE
+				velocity = Vector2.ZERO
+				
+				if shoot_timer:
+					shoot_timer.stop()
+					
+				update_sprite()
+				try_play_exploration_music()
+				
+				return
+			
 			aim_at_player()
 			
 			# Direção base (ir para cima) com desvio aleatório
@@ -230,7 +243,7 @@ func arrest() -> void:
 
 func remove_from_scene() -> void:
 	queue_free()
-	MusicManager.play_exploration_music()
+	try_play_exploration_music()
 	if get_parent().get_child_count() <= 1:
 		GameManager.win_game()
 
@@ -274,6 +287,9 @@ func patrol() -> void:
 		return
 	
 	var target_point = patrol_points[0]
+	
+	look_at(target_point.global_position)
+	
 	var direction = (target_point.global_position - global_position).normalized()
 	velocity = direction * 120.0
 	move_and_slide()
@@ -282,3 +298,13 @@ func patrol() -> void:
 		# Move first point to the end of the list to create a loop
 		patrol_points.append(patrol_points.pop_front())
 		look_at(patrol_points[0].global_position)
+
+func try_play_exploration_music() -> void:
+	# Pega a lista de todos os inimigos vivos no mapa
+	var all_enemies = get_tree().get_nodes_in_group("enemies")
+	
+	for enemy in all_enemies:
+		if enemy != self and enemy.current_state == State.HOSTILE:
+			return 
+			
+	MusicManager.play_exploration_music()

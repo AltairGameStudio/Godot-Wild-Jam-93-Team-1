@@ -15,7 +15,7 @@ light_mode = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t718d"]
 size = Vector2(84, 108)
 
-[node name="CriminalTarget" type="CharacterBody2D" unique_id=1990985216]
+[node name="CriminalTarget" type="CharacterBody2D" unique_id=1990985216 groups=["enemies"]]
 script = ExtResource("1_t718d")
 bullet_scene = ExtResource("2_cx3cy")
 
