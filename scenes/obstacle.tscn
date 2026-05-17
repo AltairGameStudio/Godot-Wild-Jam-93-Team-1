@@ -34,6 +34,6 @@ position = Vector2(5.722046e-06, 0.24999893)
 scale = Vector2(1.0423452, 0.9750001)
 texture = ExtResource("2_cjuko")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1904669064]
+[node name="UnlockingSound" type="AudioStreamPlayer" parent="." unique_id=1904669064]
 stream = SubResource("AudioStreamWAV_drdry")
 bus = &"SFX"
