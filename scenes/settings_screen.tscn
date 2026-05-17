@@ -1,15 +1,35 @@
 [gd_scene format=3 uid="uid://lepbs7dswgrj"]
 
+[ext_resource type="Texture2D" uid="uid://cqbjf5fpotdh5" path="res://assets/ui/banner_modern.png" id="1_n20dh"]
 [ext_resource type="Script" uid="uid://dfn1lsb4inhte" path="res://scripts/settings_screen.gd" id="1_srqes"]
 [ext_resource type="AudioStream" uid="uid://bcypfm8fjy2xr" path="res://assets/sfx/click.mp3" id="2_assm4"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="2_pt01f"]
+[ext_resource type="Texture2D" uid="uid://cyw0e3khsmr6k" path="res://assets/ui/button_red.png" id="3_n20dh"]
 
-[node name="SettingsScreen" type="ColorRect" unique_id=758672754]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q1qo"]
+texture = ExtResource("3_n20dh")
+modulate_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5s44"]
+texture = ExtResource("3_n20dh")
+modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbblf"]
+texture = ExtResource("3_n20dh")
+modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
+
+[node name="SettingsScreen" type="NinePatchRect" unique_id=1284784896]
+self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 1)
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.1
 anchor_right = 0.75
 anchor_bottom = 0.9
-color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+texture = ExtResource("1_n20dh")
+patch_margin_left = 29
+patch_margin_top = 29
+patch_margin_right = 29
+patch_margin_bottom = 29
 script = ExtResource("1_srqes")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=345318632]
@@ -17,10 +37,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = -50.0
-offset_bottom = -50.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 32
@@ -29,7 +49,8 @@ columns = 2
 
 [node name="SFXLabel" type="Label" parent="GridContainer" unique_id=2039602798]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_pt01f")
+theme_override_font_sizes/font_size = 48
 text = "Sound
 effects"
 horizontal_alignment = 1
@@ -45,7 +66,8 @@ ticks_on_borders = true
 
 [node name="MusicLabel" type="Label" parent="GridContainer" unique_id=239025974]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("2_pt01f")
+theme_override_font_sizes/font_size = 48
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,21 +80,29 @@ max_value = 2.0
 step = 0.001
 ticks_on_borders = true
 
-[node name="SettingsBackButton" type="Button" parent="." unique_id=382880186]
+[node name="SettingsBackButton" type="Button" parent="." unique_id=1832484874]
+custom_minimum_size = Vector2(130, 70)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.5
-offset_top = -78.0
-offset_right = 50.5
-offset_bottom = -25.0
+offset_left = -65.0
+offset_top = -120.0
+offset_right = 65.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_pt01f")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_7q1qo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t5s44")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hbblf")
 text = "Return"
+icon_alignment = 1
+expand_icon = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=752606285]
 stream = ExtResource("2_assm4")
