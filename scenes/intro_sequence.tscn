@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b13gogwmj7da8" path="res://scripts/intro_sequence.gd" id="1_eda3u"]
 [ext_resource type="AudioStream" uid="uid://bpd1r7ynjin0x" path="res://assets/sound/doorbell-old-tring.ogg" id="1_ilyg3"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="3_he61g"]
 [ext_resource type="AudioStream" uid="uid://lvfrxjpxfrvq" path="res://assets/sound/generated-005_fast.wav" id="3_yle8u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eda3u"]
-font_size = 32
+font = ExtResource("3_he61g")
+font_size = 50
+font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yle8u"]
-font_size = 24
+font = ExtResource("3_he61g")
+font_size = 40
+font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [node name="IntroSequence" type="Control" unique_id=1905447250]
 layout_mode = 3

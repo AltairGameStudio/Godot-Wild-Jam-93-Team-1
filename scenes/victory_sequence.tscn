@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://c80muikrdyo2v"]
 
 [ext_resource type="Script" uid="uid://v4rfo57k01sd" path="res://scripts/victory_sequence.gd" id="1_yxng5"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="2_s2bgx"]
 [ext_resource type="AudioStream" uid="uid://lvfrxjpxfrvq" path="res://assets/sound/generated-005_fast.wav" id="2_yxng5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eda3u"]
-font_size = 32
+font = ExtResource("2_s2bgx")
+font_size = 50
+font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yle8u"]
-font_size = 24
+font = ExtResource("2_s2bgx")
+font_size = 40
+font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
 
 [node name="VictorySequence" type="Control" unique_id=1905447250]
 layout_mode = 3
