@@ -143,15 +143,20 @@ text = "Credits"
 visible = false
 layout_mode = 1
 
-[node name="CreditsScreen" type="ColorRect" parent="." unique_id=40780251]
+[node name="CreditsScreen" type="NinePatchRect" parent="." unique_id=4885193]
 visible = false
+self_modulate = Color(0.12941177, 0.16862746, 0.14901961, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.1
 anchor_right = 0.75
 anchor_bottom = 0.9
-color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+texture = ExtResource("3_8ln24")
+patch_margin_left = 29
+patch_margin_top = 29
+patch_margin_right = 29
+patch_margin_bottom = 29
 
 [node name="CreditsLabel" type="Label" parent="CreditsScreen" unique_id=609988665]
 layout_mode = 1
@@ -160,33 +165,65 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -149.0
+offset_top = -290.0
+offset_right = 149.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Programming: Pedro & Pedro
-Sound Design: Nivadra"
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 64
+text = "Programming:
+Pedro Coterli
+Pedro Thomaz
+
+Sound Design:
+Nivadra"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CreditsBackButton" type="Button" parent="CreditsScreen" unique_id=1326464007]
+[node name="CreditsLabel2" type="Label" parent="CreditsScreen" unique_id=1227489997]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.5
+offset_top = 90.0
+offset_right = 310.5
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 32
+text = "Assets credits on our itch.io page"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsBackButton" type="Button" parent="CreditsScreen" unique_id=1664537785]
+custom_minimum_size = Vector2(130, 70)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.5
-offset_top = -78.0
-offset_right = 50.5
-offset_bottom = -25.0
+offset_left = -65.0
+offset_top = -120.0
+offset_right = 65.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("4_oa1go")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_flqon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ln24")
 text = "Return"
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
