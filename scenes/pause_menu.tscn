@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://bgnlkgksr0r1a"]
 
 [ext_resource type="Script" uid="uid://clshnwdsgaep7" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://bkjxav41bwaqg" path="res://assets/ui/m6x11plus.ttf" id="2_5d2l8"]
 [ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_kukqi"]
+[ext_resource type="Texture2D" uid="uid://cyw0e3khsmr6k" path="res://assets/ui/button_red.png" id="3_7l7mv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4r4p"]
+texture = ExtResource("3_7l7mv")
+modulate_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1s2dm"]
+texture = ExtResource("3_7l7mv")
+modulate_color = Color(0.6149049, 0.10371773, 0.10371773, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88e76"]
+texture = ExtResource("3_7l7mv")
+modulate_color = Color(0.8392157, 0.15686275, 0.15686275, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_myx47"]
 font_size = 32
@@ -28,29 +42,30 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.3019608)
+color = Color(0, 0, 0, 0.8980392)
 
 [node name="PauseLabel" type="Label" parent="." unique_id=1701533708]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.1
+anchor_top = 0.2
 anchor_right = 0.5
-anchor_bottom = 0.1
+anchor_bottom = 0.2
 offset_left = -66.0
 offset_right = 66.0
 offset_bottom = 45.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 100
 text = "Paused"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=244364459]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.6
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.6
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -59,40 +74,67 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 32
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1074519259]
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1236465828]
+custom_minimum_size = Vector2(130, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88e76")
 text = "Resume"
+icon_alignment = 1
+expand_icon = true
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=2019095899]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1796829757]
+custom_minimum_size = Vector2(130, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88e76")
 text = "Settings"
+icon_alignment = 1
+expand_icon = true
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=685292560]
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=30877515]
+custom_minimum_size = Vector2(180, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.81960785, 0.84705883, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1s2dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88e76")
 text = "Main menu"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="." unique_id=2129831822]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -183.0
+offset_top = 156.0
+offset_right = 181.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5d2l8")
+text = "Press C to open tutorial"
+label_settings = SubResource("LabelSettings_myx47")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsScreen" parent="." unique_id=758672754 instance=ExtResource("2_kukqi")]
 visible = false
 layout_mode = 1
-
-[node name="Label" type="Label" parent="." unique_id=2129831822]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -182.0
-offset_top = -270.0
-offset_right = 182.0
-offset_bottom = -225.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Press C to open tutorial"
-label_settings = SubResource("LabelSettings_myx47")
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
