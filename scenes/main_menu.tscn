@@ -1,7 +1,25 @@
 [gd_scene format=3 uid="uid://bo2yv1glosdgm"]
 
 [ext_resource type="Script" uid="uid://b3bp4t6fjox23" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bm6infqvq1u6y" path="res://assets/ui/scifi_main_menu.jpg" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://lepbs7dswgrj" path="res://scenes/settings_screen.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cqbjf5fpotdh5" path="res://assets/ui/banner_modern.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://cyw0e3khsmr6k" path="res://assets/ui/button_red.png" id="4_rtw2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font_size = 64
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.54509807, 0, 0, 0.827451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.54509807, 0, 0, 0.827451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("4_rtw2f")
+modulate_color = Color(0.54509807, 0, 0, 0.827451)
 
 [node name="MainMenu" type="Control" unique_id=154347934]
 process_mode = 3
@@ -13,20 +31,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
-[node name="GameTitle" type="Label" parent="." unique_id=151654199]
-layout_mode = 1
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593196695]
+position = Vector2(897, 454)
+scale = Vector2(1.1095238, 0.93333334)
+texture = ExtResource("2_bqqt6")
+
+[node name="GameTitle" type="Node2D" parent="." unique_id=936749305]
+
+[node name="Sprite2D" type="Sprite2D" parent="GameTitle" unique_id=1266052718]
+modulate = Color(0.54509807, 0, 0, 0.7607843)
+position = Vector2(901, 276.5)
+scale = Vector2(1.3164063, 1.3437501)
+texture = ExtResource("3_8ln24")
+
+[node name="GameTitle" type="Label" parent="GameTitle" unique_id=151654199]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.3
 anchor_right = 0.5
 anchor_bottom = 0.3
-offset_left = -174.0
-offset_top = -44.0
-offset_right = 174.0
-offset_bottom = 44.0
+offset_left = 611.0
+offset_top = 226.0
+offset_right = 1189.0
+offset_bottom = 314.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 text = "Wanted: Breathing"
+label_settings = SubResource("LabelSettings_oa1go")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -47,18 +78,26 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=828509133]
+custom_minimum_size = Vector2(130, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
 text = "Play"
+icon_alignment = 1
+expand_icon = true
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=761586223]
+custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
 text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=77075015]
+custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_5dd4i")
 text = "Credits"
 
 [node name="SettingsScreen" parent="." unique_id=758672754 instance=ExtResource("2_ekxnf")]
