@@ -130,6 +130,7 @@ func enter_surrender_state() -> void:
 
 func enter_hostile_state() -> void:
 	if current_state == State.HOSTILE: return
+	MusicManager.play_action_music()
 	current_state = State.HOSTILE
 	
 	# Prepara a arma e começa o cooldown antes do primeiro tiro
@@ -229,7 +230,6 @@ func arrest() -> void:
 
 func remove_from_scene() -> void:
 	queue_free()
-	print("oi rfs")
 	MusicManager.play_exploration_music()
 	if get_parent().get_child_count() <= 1:
 		GameManager.win_game()

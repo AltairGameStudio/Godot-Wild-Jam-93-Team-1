@@ -41,9 +41,7 @@ func play_cutscene() -> void:
 	get_tree().paused = true
 	
 	var enemy_score = GameManager.points
-	
-	print(enemy_score)
-	
+		
 	if enemy_score <= 300:
 		story_lines = story_lines_bad
 	elif enemy_score <= 600:
