@@ -40,11 +40,11 @@ func play_cutscene() -> void:
 	# Pausa o jogo
 	get_tree().paused = true
 	
-	var enemy_score = GameManager.points
+	var captured = GameManager.captured
 		
-	if enemy_score <= 300:
+	if captured <= 2:
 		story_lines = story_lines_bad
-	elif enemy_score <= 600:
+	elif captured <= 6:
 		story_lines = story_lines_mid
 	else:
 		story_lines = story_lines_good

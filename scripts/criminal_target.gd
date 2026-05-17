@@ -237,8 +237,8 @@ func arrest() -> void:
 
 	$/root/World/HUD/DialogBox.display_text("Arrest: +" + str(capture_points), false)
 	GameManager.update_points(capture_points)
+	GameManager.update_captured()
 	
-	# Por enquanto, ele apenas desaparece da cena
 	remove_from_scene()
 
 func remove_from_scene() -> void:

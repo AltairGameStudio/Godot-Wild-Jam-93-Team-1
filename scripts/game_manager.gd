@@ -6,6 +6,7 @@ var time_remaining: float
 var points: int = 0
 var is_game_over: bool = true
 var medkit_count: int = 0
+var captured: int = 0
 
 var audio_player: AudioStreamPlayer
 var ticking_sfx = load("res://assets/sfx/clock ticking.mp3")
@@ -38,6 +39,8 @@ func start_game() -> void:
 	victory_screen_shown = false
 	time_remaining = total_time
 	points = 0
+	captured = 0
+	medkit_count = 0
 	is_game_over = false
 	get_tree().paused = false
 	MusicManager.play_exploration_music()
@@ -77,6 +80,9 @@ func show_victory_screen() -> void:
 func update_points(amount: int) -> void:
 	points += amount
 	$/root/World/HUD/PointsLabel.text = str(points)
+
+func update_captured() -> void:
+	captured += 1
 
 func add_medkit(amount: int) -> void:
 	medkit_count += amount
