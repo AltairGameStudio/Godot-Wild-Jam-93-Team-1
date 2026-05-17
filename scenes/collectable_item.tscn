@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1e7q568itphu" path="res://scripts/collectable_item.gd" id="1_7u7jm"]
 [ext_resource type="Texture2D" uid="uid://cp100m3062y3f" path="res://icon.svg" id="2_yg184"]
+[ext_resource type="PackedScene" uid="uid://b2amqg0dvy7vi" path="res://scenes/item_glow_hint.tscn" id="3_yg184"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7u7jm"]
 light_mode = 2
@@ -26,3 +27,5 @@ shape = SubResource("RectangleShape2D_t8v6b")
 
 [node name="PickupSFX" type="AudioStreamPlayer2D" parent="." unique_id=673748000]
 bus = &"SFX"
+
+[node name="ItemGlowHint" parent="." unique_id=594197805 instance=ExtResource("3_yg184")]

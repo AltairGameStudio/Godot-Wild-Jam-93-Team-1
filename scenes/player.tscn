@@ -17,6 +17,9 @@ size = Vector2(83, 108)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(67, 166)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ur7pv"]
+light_mode = 1
+
 [node name="Player" type="CharacterBody2D" unique_id=1287792069 groups=["player"]]
 script = ExtResource("1_g2els")
 sprite_idle = ExtResource("2_dqkch")
@@ -56,6 +59,7 @@ default_color = Color(1, 1, 0.49411765, 1)
 [node name="HealBar" type="ProgressBar" parent="." unique_id=1614195437]
 visible = false
 top_level = true
+material = SubResource("CanvasItemMaterial_ur7pv")
 offset_left = -64.0
 offset_top = -78.0
 offset_right = 64.0
