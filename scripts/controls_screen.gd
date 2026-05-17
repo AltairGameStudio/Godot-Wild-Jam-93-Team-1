@@ -15,4 +15,6 @@ func _input(event: InputEvent) -> void:
 func toggle_controls() -> void:
 	visible = !visible
 	# Pausa o jogo enquanto o tutorial estiver aberto
+	if $/root/World/HUD/PauseMenu.visible:
+		return # Se o menu de pausa já estiver aberto, não muda o estado de pausa
 	get_tree().paused = visible

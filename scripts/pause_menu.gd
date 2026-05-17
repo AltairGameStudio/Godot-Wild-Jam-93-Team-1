@@ -9,6 +9,9 @@ func resume() -> void:
 	get_tree().paused = false
 
 func _input(event: InputEvent) -> void:
+	if $/root/World/HUD/ControlsScreen.visible:
+		return # Se o tutorial já estiver aberto, não processa o input de pausa
+	
 	if event.is_action_pressed("pause"):
 		resume()
 		get_viewport().set_input_as_handled()
