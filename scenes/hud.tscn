@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dcsp1ejnyytv5" path="res://scripts/inventory_slot.gd" id="2_5ysmq"]
 [ext_resource type="Script" uid="uid://bd8lnpyuh3kdf" path="res://scripts/time_label.gd" id="4_6fi6k"]
 [ext_resource type="Script" uid="uid://j86o5lumxsmj" path="res://scripts/dialog_box.gd" id="5_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://2bpeqmg010hd" path="res://assets/ui/scrollbar_future_grey.png" id="6_3swnk"]
 [ext_resource type="PackedScene" uid="uid://buuujl3ct1quy" path="res://scenes/game_over_screen.tscn" id="6_5pdws"]
 [ext_resource type="Script" uid="uid://swn71rn1hu8i" path="res://scripts/health_bar.gd" id="6_047uy"]
 [ext_resource type="Script" uid="uid://d1ades88sr8hc" path="res://scripts/medkit_counter.gd" id="7_5pdws"]
@@ -239,11 +240,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=149502484]
-offset_left = 112.0
-offset_top = 34.0
-offset_right = 362.0
-offset_bottom = 64.0
+[node name="HealthBar2" type="Node2D" parent="." unique_id=1700931365]
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar2" unique_id=1213626944]
+modulate = Color(0.8392157, 0.15686275, 0.15686275, 1)
+position = Vector2(267.17355, 49.097366)
+rotation = 1.5707964
+scale = Vector2(1.5060853, 2.2995868)
+texture = ExtResource("6_3swnk")
+
+[node name="HealthBar" type="ProgressBar" parent="HealthBar2" unique_id=149502484]
+offset_left = 147.0
+offset_top = 37.0
+offset_right = 387.0
+offset_bottom = 62.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_5pdws")
 show_percentage = false
 script = ExtResource("6_047uy")
